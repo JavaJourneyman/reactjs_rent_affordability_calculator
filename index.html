@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ReactJS + RefluxJS • TodoMVC</title>
+    <!-- <link rel="stylesheet" href="app/bower_components/boostrap-sass-official/index.css"> -->
+    <!-- CSS overrides - remove if you don't need it -->
+    <link rel="stylesheet" href="css/app.css">
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+    <style>
+    *{
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color:rgba(0,0,0,.16);
+        font-family: 'PT Sans', sans-serif;
+    }
+
+    .calcApp_simpleCalcApp{
+        border-radius:5px;
+        max-width:600px;
+        padding:0px 0px;
+        margin:0px auto;
+        text-align:center;
+    }
+
+    .redRed{
+        background-color:red;
+    }
+
+    .calcApp_selectorButton{
+        background-color:orange;
+        color:white;
+        font-weight:thin;
+        box-shadow:none;
+        border:none;
+        border-radius:5px;
+        vertical-align:top;
+        font-size:18px !important;
+        text-transform: uppercase;;
+        -webkit-box-shadow:     3px 3px 4px 0px rgba(50, 50, 50, 0.75);
+        -moz-box-shadow:        3px 3px 4px 0px rgba(50, 50, 50, 0.75);
+        box-shadow:                 3px 3px 4px 0px rgba(50, 50, 50, 0.75);
+    }
+
+    ._calcApp_selectorButton--active{
+        opacity:0.75;
+        margin-top:3px !important;
+        -webkit-box-shadow: 1px 1px 1px 0px rgba(50, 50, 50, 0.25);
+        -moz-box-shadow:    1px 1px 1px 0px rgba(50, 50, 50, 0.25);
+        box-shadow:         1px 1px 1px 0px rgba(50, 50, 50, 0.25); 
+    }
+
+    .calcApp_selectorButton:focus{  
+         outline: 0;
+       }
+
+    .calcapp_instructionsLabel{
+        color:green;
+        font-weight:bold;
+    }
+
+    .calcApp_summaryText{
+        color:white;
+        margin:0px auto;
+        max-width:300px;
+        font-size: 14px;
+        line-height: 16px;
+    }
+
+    .simpleCalcApp p{
+    color:white;
+    }
+
+    .simpleCalc_output {
+        display:inline-block;
+        max-width:350px;
+        width:96%;
+        margin: 10px auto;
+        color:white;
+        font-size:24px;
+        font-size:36px;
+        text-align:center;
+        color: white !important; 
+    }
+
+    .simpleCalc_moneyleft {
+        min-height: 200px;
+        margin-top: 20px;
+        background-color:#222 !important;
+        clear:both;
+        padding:15px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px; 
+    }
+
+.simpleCalc_moneyleft h3 {
+    border-bottom:3px solid rgba(255,255,255,.1);
+    width:90%;
+    margin:10px auto;
+    color:white;   
+    font-weight:200;
+    text-transform: uppercase; 
+}
+
+    #sumedFunds {
+        display:inline-block;
+        max-width:350px;
+        width:96%;
+        margin: 10px auto;
+        color:white;
+        font-size:24px;
+        font-size:36px;
+        text-align:center;
+    }
+
+    #todoapp {
+        padding: 15px 0 0 0;
+        border-radius: 5px;
+        max-width: 600px;
+        width: 96%;
+        margin: 15px auto;
+        text-align: center;
+    }
+
+    .effect6
+    {
+        position:relative;       
+        -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+           -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+                box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    }
+
+    .effect6:before, .effect6:after
+    {
+        content:"";
+        position:absolute; 
+        z-index:-1;
+        -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+        -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+        box-shadow:0 0 20px rgba(0,0,0,0.8);
+        bottom:0;
+        left:10px;
+        right:10px;
+        -moz-border-radius:100px / 10px;
+        border-radius:100px / 10px;
+    }
+
+    #todoapp table{
+        border-collapse:collapse;
+        display:inline-block;
+        max-width:550px;
+        width:85%;
+        margin:10px auto;
+        font-size:18px !important;
+        line-height:35px !important;
+    }
+
+
+    #todoapp tbody{
+    border:0px !important;
+    }
+
+    #todoapp td{
+    position:relative;
+    border:0px !important;
+    }
+
+    #todoapp tr{ 
+    border-top:1px solid white;
+    border-bottom:1px solid white;
+    }
+
+    #todoapp tr:hover .inputIcon{
+        opacity:1;
+    }
+
+    #todoapp tr:hover{
+    background-color:rgba(0,0,0,.1);
+    }
+
+    #todoapp tr:hover input{
+    border:2px solid green !important;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    }
+    
+    #todoapp td:nth-child(1){
+        width:100%;
+    }
+    
+    .expenseNameField {
+        display:table;
+        text-align: center;
+        color: green;
+        font-size: 18px;
+        line-height: 18px;
+        font-weight: 200;
+        padding: 0px;
+        height: 30px;
+        width: 100%;
+    }
+
+    .calcApp_instructions{
+        position: relative;
+        font-size:12px; 
+        line-height:18px; 
+        max-width:350px;
+        margin:15px auto 0px auto;
+    }
+
+    .calcApp_sectionContainer{
+
+    }
+
+    .expenseNameField span {
+        display:table-cell;
+        vertical-align:middle;
+    }
+
+     .expenseNameField span:nth-child(2){
+        width:100%;
+        }
+
+    #todoapp td:nth-child(2){
+        width: 30%;
+        padding: 0 4px;
+    }
+
+    .calcApp_sectionTitle {
+        background-color:green;
+        color:white;
+        max-width:80%;
+        padding:5px 5px;
+        margin:15px 10% 0px 10%;
+    }
+
+    #todoapp tr:nth-child(n){
+        background-color: rgba(0,0,0,.05);
+    }
+
+    #todoapp tr:nth-child(2n){
+        background-color: rgba(0,0,0,.01);
+    }
+
+    #todoapp td:nth-child(3){
+        width: 8%;
+        line-height: 0px !important;
+    }
+
+    .deleteButton {
+    margin-left:4px;
+    margin-right:4px;
+      background-color:inherit;
+      border:none;  
+      position:relative;
+      z-index:10px;
+      border-radius: 50%;
+      padding: 0px !important;
+      height: 25px;
+      width: 25px;
+      font-size: 25px;
+      color: orange;
+      cursor: pointer;
+      text-align: center;
+      opacity:.80;
+    }
+
+    #addExpenseWrap{
+        overflow:hidden;
+        width: 80%;
+        padding:15px;
+        margin:auto;
+        background-color:rgba(150,150,150,.1);
+    }
+
+    #addExpenseWrap h3{
+    line-height:36px;
+    margin:0px;
+    font-weight:200;
+    font-size:22px;
+    padding:5px;
+    text-transform: uppercase;
+    margin:0px 50px 15px 50px;
+    border-bottom:3px solid rgba(50,50,50,.1);
+    color:rgba(50,50,50,.6);
+    }
+
+    #summaryWrapper{
+        width:100%;
+        background-color:#222;
+        margin:20px auto;
+        clear:both;
+        padding:15px;       
+        border-bottom-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+
+    #summaryWrapper h3{
+    border-bottom:3px solid rgba(255,255,255,.1);
+    width:90%;
+    margin:10px auto;
+    color:white;   
+    font-weight:200;
+    text-transform: uppercase; 
+    }
+
+    #todoapp input{
+    position:relative;
+    }
+
+    .calApp_AddExpenseButton {
+        background-color:green;
+        border:none;
+        height:40px;
+        margin:0px 10px;
+        vertical-align: top;
+        line-height:40px;
+        cursor:pointer;
+        color:white;
+        font-weight: 600;
+        font-size:18px;
+        font-weight:28px;
+        display:inline-block;
+        border-radius:5px;
+        padding:0px 20px;
+    }
+
+    .calcInsertExpenseField {
+        position: relative;
+        border: none;
+        background-color: transparent;
+        margin: 0px;
+        width: 100%;
+        border: none;
+        font-size: 14px;
+        height: 100%;
+        font-weight: 200;
+        text-align: center;
+        font-style: italic;
+        padding: 0px 0px 0px 15px !important;
+    }
+
+    .inputIcon {
+        display:block;
+        opacity:0;
+        background-color:green;
+        height:48px;
+        width:25px;
+        color:white;
+        line-height:52px;
+        position:absolute;
+        top:2px;
+        left:0;
+        bottom:0;
+        z-index:999;
+        right:0;
+    }
+
+    .calcInsertExpenseField:focus{
+        background-color:rgba(0,255,0,0.1);
+        outline:none;
+    }
+
+    .calcApp_calcTitle {
+        margin:20px 0px;
+        font-size: 32px; 
+        line-height: 32px; 
+        text-align: center;
+    }
+
+    .calcApp_addNewExpenseField{
+        text-align:center;
+        width:50% !important;
+        border-radius:5px;
+        border: 3px solid green !important;
+        padding: 0px 5px !important;
+        font-size:18px;
+        line-height:40px;
+        height:40px;
+    }
+
+    #calcAppIntroContainer{
+        text-align:center;
+        min-height:55px;
+    }
+
+    .calcApp_typeDescription {
+        display:inline-block;
+        width:46%;
+        text-align:center;
+        margin:2%;
+        min-height:60px;
+    }
+
+    .calcApp_typeDescriptionText {
+        margin:5px;
+        padding:0;
+    }
+
+    .calcApp_typeArrow {
+        display:block;
+        font-size:30px;
+        margin-top: -20px;
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+        filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    }
+
+    .alcApp_descriptionContainer {
+        text-align:center;
+    }
+
+    #calcAppIntroContainer button{
+        padding:0px 30px;
+        font-size:26px;
+        line-height:50px;
+        cursor: pointer;
+        margin:0px 5px;
+    }
+
+    .incomeInputField {
+        border:3px solid green !important;
+        border-radius:5px;
+        font-size:24px !important;
+        line-height:50px;
+        height:50px;
+        padding:0px 20px;
+        overflow: hidden !important;
+        width:90% !important;
+        margin-bottom:15px;
+        text-align:center;
+        font-weight:400 !important;
+        color:#2a462a !important;
+    }
+
+    #todoapp table:nth-child(1){
+        margin-bottom:0px !important;
+    }
+    
+
+    .fadeInTransition{
+        overflow: hidden;
+        -webkit-transition: 1s;
+        -o-transition: 1s;
+        transition: 1s;
+    }
+
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button { 
+      -webkit-appearance: none; 
+      margin: 0; 
+    }
+
+    </style>
+</head>
+
+<body>
+
+    <div id="calcAppIntroContainer">
+        <button id="simpleCalcApp" class="calcApp_selectorButton">Simple Calculator</button>
+        <button id="calcApp" class="calcApp_selectorButton">Detailed Calculator</button>
+    </div>
+    <section id="todoapp">
+        <!--  react.js app goes here see js/components.jsx.js -->
+    </section>
+    
+        <footer id="info">
+            <p>footer</p>
+        </footer>
+    
+    <!-- <script src="bower_components/todomvc-common/base.js"></script> -->
+    <script src="app/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="app/bower_components/react/react-with-addons.js"></script>
+    <!-- <script src="app/bower_components/react-router/dist/react-router.js"></script> -->
+    <script src="app/bower_components/react/JSXTransformer.js"></script>
+    <script src="app/bower_components/lodash/lodash.js"></script>
+    <script src="app/bower_components/reflux/dist/reflux.js"></script>
+    <script src="app/bower_components/numeral/numeral.js"></script>
+    <script src="js/actions.js"></script>
+    <script src="js/store.js"></script>
+    <script type="text/jsx" src="js/components.jsx.js"></script>
+</body>
+</html>
+
+<script>
+$('.calcApp_selectorButton').on('click', function(){
+    $('.calcApp_selectorButton').removeClass('_calcApp_selectorButton--active');
+    $(this).addClass('_calcApp_selectorButton--active');
+    $('#todoapp').addClass('effect6');
+    $('#todoapp').css('background','white');
+});
+</script>
+
+
