@@ -270,7 +270,7 @@ var CalcApp = React.createClass({
           });
           } else {
             this.setState({
-            showCalcApp : { maxHeight:'0px' }
+            showCalcApp : {maxHeight:'0px', padding: '0px' }
           });
           }
           this.setState({

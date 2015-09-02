@@ -29,10 +29,6 @@
         text-align:center;
     }
 
-    .redRed{
-        background-color:red;
-    }
-
     .calcApp_selectorButton{
         background-color:orange;
         color:white;
@@ -460,18 +456,36 @@
       margin: 0; 
     }
 
-    </style>
-</head>
+    .calcApp_introTextContainer {
+        width:96%;
+        max-width:550px;
+        padding:15px;
+        margin:20px auto;
+        border: 5px solid red;
+    }
 
+    .calcApp_introText{
+        margin:0;
+        padding:0;
+    }
+</style>
+
+</head>
 <body>
+<header>
+    
+</header>
+
+    <div class="calcApp_introTextContainer"><p class="calcApp_introText">this is the intro text</p></div>
 
     <div id="calcAppIntroContainer">
         <button id="simpleCalcApp" class="calcApp_selectorButton">Simple Calculator</button>
         <button id="calcApp" class="calcApp_selectorButton">Detailed Calculator</button>
     </div>
-    <section id="todoapp">
+
+    <main id="todoapp">
         <!--  react.js app goes here see js/components.jsx.js -->
-    </section>
+    </main>
     
         <footer id="info">
             <p>footer</p>
