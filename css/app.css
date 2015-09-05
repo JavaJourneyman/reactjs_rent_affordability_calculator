@@ -2,7 +2,7 @@
 
 
 @font-face {
-    font-family: "Flaticon";
+    font-family: "calcAppFont";
     src: url("../assets/icons/flaticon.eot");
     src: url("../assets/icons/flaticon.eot#iefix") format("embedded-opentype"),
     url("../assets/icons/flaticon.woff") format("woff"),
@@ -11,98 +11,97 @@
     font-weight: normal;
     font-style: normal;
 }
-[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
-[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
-    font-family: Flaticon;
+[class^="calcAppFont-"]:before, [class*="calcAppFont-"]:before,
+[class^="calcAppFont-"]:after, [class*="calcAppFont-"]:after {   
+    font-family: calcAppFont;
 }
 
-.flaticon-cellphone96:before {
+.calcAppFont-cellphone96:before {
     content: "\e000";
 }
-.flaticon-clocks18:before {
+.calcAppFont-clocks18:before {
     content: "\e001";
 }
-.flaticon-coin18:before {
+.calcAppFont-coin18:before {
     content: "\e002";
 }
-.flaticon-disco:before {
+.calcAppFont-disco:before {
     content: "\e003";
 }
-.flaticon-dollar-symbol1:before {
+.calcAppFont-dollar-symbol1:before {
     content: "\e004";
 }
-.flaticon-dollar182:before {
+.calcAppFont-dollar182:before {
     content: "\e005";
 }
-.flaticon-downarrows11:before {
+.calcAppFont-downarrows11:before {
     content: "\e006";
 }
-.flaticon-hanger22:before {
+.calcAppFont-hanger22:before {
     content: "\e007";
 }
-.flaticon-hospital32:before {
+.calcAppFont-hospital32:before {
     content: "\e008";
 }
-.flaticon-keyboard53:before {
+.calcAppFont-keyboard53:before {
     content: "\e009";
 }
-.flaticon-laptopcomputer8:before {
+.calcAppFont-laptopcomputer8:before {
     content: "\e00a";
 }
-.flaticon-leftarrows6:before {
+.calcAppFont-leftarrows6:before {
     content: "\e00b";
 }
-.flaticon-login12:before {
+.calcAppFont-login12:before {
     content: "\e00c";
 }
-.flaticon-magnifying-glass23:before {
+.calcAppFont-magnifying-glass23:before {
     content: "\e00d";
 }
-.flaticon-minussign5:before {
+.calcAppFont-minussign5:before {
     content: "\e00e";
 }
-.flaticon-money132:before {
+.calcAppFont-money132:before {
     content: "\e00f";
 }
-.flaticon-money360:before {
+.calcAppFont-money360:before {
     content: "\e010";
 }
-.flaticon-money425:before {
+.calcAppFont-money425:before {
     content: "\e011";
 }
-.flaticon-multimediaoption16:before {
+.calcAppFont-multimediaoption16:before {
     content: "\e012";
 }
-.flaticon-plate7:before {
+.calcAppFont-plate7:before {
     content: "\e013";
 }
-.flaticon-poor:before {
+.calcAppFont-poor:before {
     content: "\e014";
 }
-.flaticon-realestate2:before {
+.calcAppFont-realestate2:before {
     content: "\e015";
 }
-.flaticon-rent4:before {
+.calcAppFont-rent4:before {
     content: "\e016";
 }
-.flaticon-rightarrows6:before {
+.calcAppFont-rightarrows6:before {
     content: "\e017";
 }
-.flaticon-rolling:before {
+.calcAppFont-rolling:before {
     content: "\e018";
 }
-.flaticon-video189:before {
+.calcAppFont-video189:before {
     content: "\e019";
 }
-.flaticon-weightlifter3:before {
+.calcAppFont-weightlifter3:before {
     content: "\e01a";
 }
-.flaticon-wrong:before {
+.calcAppFont-wrong:before {
     content: "\e01b";
 }
 
-
-.expenseIcon{
+.calcApp_expenseIcon {
     float:left; 
     color:rgba(0, 128, 0, 0.6);
     font-size:26px;
@@ -112,6 +111,452 @@
     border:2px solid rgba(0, 128, 0, 0.3);
     border-radius:10px;
 }
+
+    .calcApp_mainWrapper {
+        max-width: 750px;
+        margin: 45px auto;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        font-family: 'PT Sans', sans-serif;
+    }
+
+    .calcApp_simpleCalcApp{
+        border-radius:5px;
+        max-width:600px;
+        padding:0px 0px;
+        margin:0px auto;
+        text-align:center;
+    }
+
+    .calcApp_selectorButton{
+        background-color:orange;
+        color:white;
+        font-weight:thin;
+        box-shadow:none;
+        border:none;
+        border-radius:5px;
+        vertical-align:top;
+        font-size:18px !important;
+        text-transform: uppercase;;
+        -webkit-box-shadow:     3px 3px 4px 0px rgba(50, 50, 50, 0.75);
+        -moz-box-shadow:        3px 3px 4px 0px rgba(50, 50, 50, 0.75);
+        box-shadow:                 3px 3px 4px 0px rgba(50, 50, 50, 0.75);
+    }
+
+    ._calcApp_selectorButton--active{
+        opacity:0.75;
+        margin-top:3px !important;
+        -webkit-box-shadow: 1px 1px 1px 0px rgba(50, 50, 50, 0.25);
+        -moz-box-shadow:    1px 1px 1px 0px rgba(50, 50, 50, 0.25);
+        box-shadow:         1px 1px 1px 0px rgba(50, 50, 50, 0.25); 
+    }
+
+    .calcApp_selectorButton:focus{  
+         outline: 0;
+       }
+
+    .calcApp_instructionsLabel{
+        color:green;
+        font-weight:bold;
+    }
+
+    .calcApp_summaryText{
+        color:white;
+        margin:0px auto;
+        max-width:300px;
+        font-size: 14px;
+        line-height: 16px;
+    }
+
+    .calcApp_simpleCalcApp p{
+    color:white;
+    }
+
+    .simpleCalc_output {
+        display:inline-block;
+        max-width:350px;
+        width:96%;
+        margin: 10px auto;
+        color:white;
+        font-size:24px;
+        font-size:36px;
+        text-align:center;
+        color: white !important; 
+    }
+
+    .simpleCalc_moneyleft {
+        min-height: 200px;
+        margin-top: 20px;
+        background-color:#222 !important;
+        clear:both;
+        padding:15px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px; 
+    }
+
+    .simpleCalc_moneyleft h3 {
+        border-bottom:3px solid rgba(255,255,255,.1);
+        width:90%;
+        margin:10px auto;
+        color:white;   
+        font-weight:200;
+        text-transform: uppercase; 
+    }
+
+    #calcApp_sumedFunds {
+        display:inline-block;
+        max-width:350px;
+        width:96%;
+        margin: 10px auto;
+        color:white;
+        font-size:24px;
+        font-size:36px;
+        text-align:center;
+    }
+
+    #calcApp_mainApp {
+        padding: 15px 0 0 0;
+        border-radius: 5px;
+        max-width: 600px;
+        width: 96%;
+        margin: 15px auto;
+        text-align: center;
+    }
+
+    .calcApp_effect6
+    {
+        position:relative;       
+        -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+           -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+                box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    }
+
+    .calcApp_effect6:before, .calcApp_effect6:after
+    {
+        content:"";
+        position:absolute; 
+        z-index:-1;
+        -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+        -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+        box-shadow:0 0 20px rgba(0,0,0,0.8);
+        bottom:0;
+        left:10px;
+        right:10px;
+        -moz-border-radius:100px / 10px;
+        border-radius:100px / 10px;
+    }
+
+    #calcApp_mainApp table{
+        border-collapse:collapse;
+        display:inline-block;
+        max-width:550px;
+        width:85%;
+        margin:10px auto;
+        font-size:18px !important;
+        line-height:35px !important;
+    }
+
+
+    #calcApp_mainApp tbody{
+    border:0px !important;
+    }
+
+    #calcApp_mainApp td{
+    position:relative;
+    border:0px !important;
+    }
+
+    #calcApp_mainApp tr{ 
+    border-top:1px solid white;
+    border-bottom:1px solid white;
+    }
+
+    #calcApp_mainApp tr:hover .inputIcon{
+        opacity:1;
+    }
+
+    #calcApp_mainApp tr:hover{
+    background-color:rgba(0,0,0,.1);
+    }
+
+    #calcApp_mainApp tr:hover input{
+    border:2px solid green !important;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    }
+    
+    #calcApp_mainApp td:nth-child(1){
+        width:100%;
+    }
+    
+    .calcApp_expenseNameField {
+        display:table;
+        text-align: center;
+        color: green;
+        font-size: 18px;
+        line-height: 18px;
+        font-weight: 200;
+        padding: 0px;
+        height: 30px;
+        width: 100%;
+    }
+
+    .calcApp_instructions{
+        position: relative;
+        font-size:12px; 
+        line-height:18px; 
+        max-width:350px;
+        margin:15px auto 0px auto;
+    }
+
+    .calcApp_expenseNameField span {
+        display:table-cell;
+        vertical-align:middle;
+    }
+
+     .calcApp_expenseNameField span:nth-child(2){
+        width:100%;
+        }
+
+    #calcApp_mainApp td:nth-child(2){
+        width: 30%;
+        padding: 0 4px;
+    }
+
+    .calcApp_sectionTitle {
+        background-color:green;
+        color:white;
+        max-width:80%;
+        padding:5px 5px;
+        margin:15px 10% 0px 10%;
+    }
+
+    #calcApp_mainApp tr:nth-child(n){
+        background-color: rgba(0,0,0,.05);
+    }
+
+    #calcApp_mainApp tr:nth-child(2n){
+        background-color: rgba(0,0,0,.01);
+    }
+
+    #calcApp_mainApp td:nth-child(3){
+        width: 8%;
+        line-height: 0px !important;
+    }
+
+    .calcApp_deleteButton {
+    margin-left:4px;
+    margin-right:4px;
+      background-color:inherit;
+      border:none;  
+      position:relative;
+      z-index:10px;
+      border-radius: 50%;
+      padding: 0px !important;
+      height: 25px;
+      width: 25px;
+      font-size: 25px;
+      color: orange;
+      cursor: pointer;
+      text-align: center;
+      opacity:.80;
+    }
+
+    #calcApp_addExpenseWrap{
+        overflow:hidden;
+        width: 80%;
+        padding:15px;
+        margin:auto;
+        background-color:rgba(150,150,150,.1);
+    }
+
+    #calcApp_addExpenseWrap h3{
+    line-height:36px;
+    margin:0px;
+    font-weight:200;
+    font-size:22px;
+    padding:5px;
+    text-transform: uppercase;
+    margin:0px 50px 15px 50px;
+    border-bottom:3px solid rgba(50,50,50,.1);
+    color:rgba(50,50,50,.6);
+    }
+
+    #calcApp_summaryWrapper {
+        width:100%;
+        background-color:#222;
+        margin:20px auto;
+        clear:both;
+        padding:15px;       
+        border-bottom-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+
+    #calcApp_summaryWrapper h3{
+    border-bottom:3px solid rgba(255,255,255,.1);
+    width:90%;
+    margin:10px auto;
+    color:white;   
+    font-weight:200;
+    text-transform: uppercase; 
+    }
+
+    #calcApp_mainApp input{
+    position:relative;
+    }
+
+    .calApp_AddExpenseButton {
+        background-color:green;
+        border:none;
+        height:40px;
+        margin:0px 10px;
+        vertical-align: top;
+        line-height:40px;
+        cursor:pointer;
+        color:white;
+        font-weight: 600;
+        font-size:18px;
+        font-weight:28px;
+        display:inline-block;
+        border-radius:5px;
+        padding:0px 20px;
+    }
+
+    .calcApp_calcInsertExpenseField {
+        position: relative;
+        border: none;
+        background-color: transparent;
+        margin: 0px;
+        width: 100%;
+        border: none;
+        font-size: 14px;
+        height: 100%;
+        font-weight: 200;
+        text-align: center;
+        font-style: italic;
+        padding: 0px 0px 0px 15px !important;
+    }
+
+    .calcApp_inputIcon {
+        display:block;
+        opacity:0;
+        background-color:green;
+        height:48px;
+        width:25px;
+        color:white;
+        line-height:52px;
+        position:absolute;
+        top:2px;
+        left:0;
+        bottom:0;
+        z-index:999;
+        right:0;
+    }
+
+    .calcApp_calcInsertExpenseField:focus{
+        background-color:rgba(0,255,0,0.1);
+        outline:none;
+    }
+
+    .calcApp_calcTitle {
+        margin:20px 0px;
+        font-size: 32px; 
+        line-height: 32px; 
+        text-align: center;
+    }
+
+    .calcApp_addNewExpenseField{
+        text-align:center;
+        width:50% !important;
+        border-radius:5px;
+        border: 3px solid green !important;
+        padding: 0px 5px !important;
+        font-size:18px;
+        line-height:40px;
+        height:40px;
+    }
+
+    #calcAppIntroContainer{
+        text-align:center;
+        min-height:55px;
+    }
+
+    .calcApp_typeDescription {
+        display:inline-block;
+        width:46%;
+        text-align:center;
+        margin:2%;
+        min-height:60px;
+    }
+
+    .calcApp_typeDescriptionText {
+        margin:5px;
+        padding:0;
+    }
+
+    .calcApp_typeArrow {
+        display:block;
+        font-size:30px;
+        margin-top: -20px;
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+        filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    }
+
+    .calcApp_descriptionContainer {
+        text-align:center;
+    }
+
+    #calcAppIntroContainer button{
+        padding:0px 30px;
+        font-size:26px;
+        line-height:50px;
+        cursor: pointer;
+        margin:0px 5px;
+    }
+
+    .calcApp_incomeInputField {
+        border:3px solid green !important;
+        border-radius:5px;
+        font-size:24px !important;
+        line-height:50px;
+        height:50px;
+        padding:0px 20px;
+        overflow: hidden !important;
+        width:90% !important;
+        margin-bottom:15px;
+        text-align:center;
+        font-weight:400 !important;
+        color:#2a462a !important;
+    }
+
+    #calcApp_mainApp table:nth-child(1){
+        margin-bottom:0px !important;
+    }
+
+    .calcApp_footerWrap {
+        margin:30px auto; 
+        width:94%;
+        background-color:red;
+        text-align:center;
+    }
+
+    .calcApp_fadeInTransition{
+        overflow: hidden;
+        -webkit-transition: 1s;
+        -o-transition: 1s;
+        transition: 1s;
+    }
+
+    .calcApp_introTitle{
+    text-align:center;
+    }
+
+
 
 
 

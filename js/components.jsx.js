@@ -1,24 +1,32 @@
+
+$('.calcApp_selectorButton').on('click', function(){
+    $('.calcApp_selectorButton').removeClass('_calcApp_selectorButton--active');
+    $(this).addClass('_calcApp_selectorButton--active');
+    $('#calcApp_mainApp').addClass('calcApp_effect6');
+    $('#calcApp_mainApp').css('background','white');
+});
+
 /** @jsx React.DOM */
 
 (function(React, ReactRouter, Reflux, Actions, global) {
 // (function(React, ReactRouter, Reflux, Actions, creatorStore, global) {
 
-        mountNode = document.getElementById("todoapp");
+        mountNode = document.getElementById("calcApp_mainApp");
 
 var catOne =  [
-    {name  : 'Rent', value : '', icon : 'expenseIcon flaticon flaticon-rent4', key : 0},
-    {name  : 'Food', value : '', icon : 'expenseIcon flaticon flaticon-plate7', key : 1},
-    {name  : 'Transportation', value : '', icon : 'expenseIcon flaticon flaticon-rolling', key : 2},
-    {name  : 'Medical & Dental', value : '', icon : 'expenseIcon flaticon flaticon-hospital32', key : 3},
-    {name  : 'Fitness & Gym Membership', value : '', icon : 'expenseIcon flaticon flaticon-weightlifter3', key : 4},
-    {name  : 'Cell Phone', value : '', icon : 'expenseIcon flaticon flaticon-cellphone96', key : 5},
-    {name  : 'Debt Repayment', value : '', icon : 'expenseIcon flaticon flaticon-money425', key : 6},
-    {name  : 'Video Streaming / Cable', value : '', icon : 'expenseIcon flaticon flaticon-video189', key : 7},
-    {name  : 'Internet', value : '', icon : 'expenseIcon flaticon flaticon-laptopcomputer8', key : 8},
-    {name  : 'Utilities', value : '', icon : 'expenseIcon flaticon flaticon-poor', key : 9},
-    {name  : 'Clothing', value : '', icon : 'expenseIcon flaticon flaticon-hanger22', key : 10},
-    {name  : 'Entertainment', value : '', icon : 'expenseIcon flaticon flaticon-disco', key : 11},
-    {name  : 'Vacation Savings', value : '', icon : 'expenseIcon flaticon flaticon-money360', key : 12}
+    {name  : 'Rent', value : '', icon : 'calcApp_expenseIcon calcAppFont calcAppFont-rent4', key : 0},
+    {name  : 'Food', value : '', icon : 'calcApp_expenseIcon calcAppFont calcAppFont-plate7', key : 1},
+    {name  : 'Transportation', value : '', icon : 'calcApp_expenseIcon calcAppFont calcAppFont-rolling', key : 2},
+    {name  : 'Medical & Dental', value : '', icon : 'calcApp_expenseIcon calcAppFont calcAppFont-hospital32', key : 3},
+    {name  : 'Fitness & Gym Membership', value : '', icon : 'calcApp_expenseIcon calcAppFont calcAppFont-weightlifter3', key : 4},
+    {name  : 'Cell Phone', value : '', icon : 'calcApp_expenseIcon calcAppFont calcAppFont-cellphone96', key : 5},
+    {name  : 'Debt Repayment', value : '', icon : 'calcApp_expenseIcon calcAppFont calcAppFont-money425', key : 6},
+    {name  : 'Video Streaming / Cable', value : '', icon : 'calcApp_expenseIcon calcAppFont calcAppFont-video189', key : 7},
+    {name  : 'Internet', value : '', icon : 'calcApp_expenseIcon calcAppFont calcAppFont-laptopcomputer8', key : 8},
+    {name  : 'Utilities', value : '', icon : 'calcApp_expenseIcon calcAppFont calcAppFont-poor', key : 9},
+    {name  : 'Clothing', value : '', icon : 'calcApp_expenseIcon calcAppFont calcAppFont-hanger22', key : 10},
+    {name  : 'Entertainment', value : '', icon : 'calcApp_expenseIcon calcAppFont calcAppFont-disco', key : 11},
+    {name  : 'Vacation Savings', value : '', icon : 'calcApp_expenseIcon calcAppFont calcAppFont-money360', key : 12}
       ],
 
     catTwo =  [
@@ -74,19 +82,19 @@ var CalcTable = React.createClass({
     });
     return(
     <div className="calcApp_sectionContainer">
-    <div style={this.props.showCalcApp} className="fadeInTransition">
+    <div style={this.props.showCalcApp} className="calcApp_fadeInTransition">
 
     <h3 className="calcApp_sectionTitle">Taxes and Other Monthly Paycheck Withholdings</h3>
-      <p style={this.props.showCalcApp} className="calcApp_instructions fadeInTransition"><span className="calcapp_instructionsLabel">Instructions: </span> Adjust the percentages below to estimate your paycheck withholdings</p>
+      <p style={this.props.showCalcApp} className="calcApp_instructions calcApp_fadeInTransition"><span className="calcApp_instructionsLabel">Instructions: </span> Adjust the percentages below to estimate your paycheck withholdings</p>
       <table>
         <tbody>
           {WithHoldRows}
           </tbody>
       </table>
       </div>
-      <div className="calcApp_sectionContainer fadeInTransition" style={withHoldingsStyle}>
+      <div className="calcApp_sectionContainer calcApp_fadeInTransition" style={withHoldingsStyle}>
       <h3 className="calcApp_sectionTitle">Monthly Expenses</h3>
-      <p style={this.props.showCalcApp} className="calcApp_instructions fadeInTransition"><span className="calcapp_instructionsLabel">Instructions: </span>Enter your monthly expenses below.  Remove an expense by clicking its orange button, or add a new expense with the form</p>
+      <p style={this.props.showCalcApp} className="calcApp_instructions calcApp_fadeInTransition"><span className="calcApp_instructionsLabel">Instructions: </span>Enter your monthly expenses below.  Remove an expense by clicking its orange button, or add a new expense with the form</p>
       <table>
         <tbody>
           {ExpRows}
@@ -115,8 +123,8 @@ netincome = (income*this.props.item.value)/100/12;
 
   return(
     <tr>
-      <td className="expenseNameField"><span className="flation flaticon-money425 expenseIcon"></span><span>{this.props.item.name}</span></td>
-      <td><span className="inputIcon">%</span><input className="calcInsertExpenseField" value={numeral(this.props.item.value).format('0')} onChange={this.onWithholdChange.bind(this, this.props.item.key)} placeholder="Enter Value"/></td>
+      <td className="calcApp_expenseNameField"><span className="calcAppFont calcAppFont-money425 calcApp_expenseIcon"></span><span>{this.props.item.name}</span></td>
+      <td><span className="calcApp_inputIcon">%</span><input className="calcApp_calcInsertExpenseField" value={numeral(this.props.item.value).format('0')} onChange={this.onWithholdChange.bind(this, this.props.item.key)} placeholder="Enter Value"/></td>
       <td>{numeral(netincome).format('$0')}</td>
     </tr>
     )
@@ -140,10 +148,10 @@ var CalcRow = React.createClass({
   render: function() {
         return(
         <tr>
-            <td className="expenseNameField"><span className={this.props.item.icon}></span><span>{this.props.item.name}</span></td>
-            <td><span className="inputIcon">$</span><input 
+            <td className="calcApp_expenseNameField"><span className={this.props.item.icon}></span><span>{this.props.item.name}</span></td>
+            <td><span className="calcApp_inputIcon">$</span><input 
                         type="number" 
-                        className="calcInsertExpenseField" 
+                        className="calcApp_calcInsertExpenseField" 
                         placeholder="Enter Amount"
                         value={this.props.item.value}   
                         onChange={this.handleChange.bind(this, this.props.item.key)}
@@ -152,7 +160,7 @@ var CalcRow = React.createClass({
             <td>
                 <button 
                     onClick={this.handleDelete.bind(this, this.props.item.key)}
-                    className="deleteButton flaticon flaticon-wrong"
+                    className="calcApp_deleteButton calcAppFont calcAppFont-wrong"
                     ></button>
             </td>
         </tr>
@@ -190,10 +198,10 @@ currentSum = currentSum - lessWithHoldings;
 currentSum =  numeral(currentSum).format('$0,0');
 
   return(
-    <div id="summaryWrapper" className="fadeInTransition" style={this.props.showCalcApp}>
+    <div id="calcApp_summaryWrapper" className="calcApp_fadeInTransition" style={this.props.showCalcApp}>
         <div className="table-summary" >
          <h3>How Much Money Will You Have Left Over?</h3>
-        <p id="sumedFunds">{currentSum}</p>
+        <p id="calcApp_sumedFunds">{currentSum}</p>
         </div>
     </div>
     );
@@ -217,7 +225,7 @@ var InputIncome = React.createClass({
   render: function(){
     return(
       <div id="incomeInputWrap">
-        <input className="incomeInputField" value={this.state.income} name="currency" placeholder="Enter Your Annual Income" onChange={this.handleIncomeInput} min="0" step="1" id="calcIncomeInput"/>
+        <input className="calcApp_incomeInputField" value={this.state.income} name="currency" placeholder="Enter Your Annual Income" onChange={this.handleIncomeInput} min="0" step="1" id="calcIncomeInput"/>
       </div>
       )
   }
@@ -291,7 +299,7 @@ var CalcApp = React.createClass({
         handleSubmit: function(newItem) {
         var newKeyVal = this.state.cat1.length;
         c1 = this.state.cat1; 
-        c1.push({name : newItem, value : event.target.value, key : newKeyVal, icon : 'expenseIcon flaticon flaticon-money132'});
+        c1.push({name : newItem, value : event.target.value, key : newKeyVal, icon : 'calcApp_expenseIcon calcAppFont calcAppFont-money132'});
         this.setState({
         cat1:c1
       });
@@ -302,7 +310,7 @@ var CalcApp = React.createClass({
           <h3 className="calcApp_calcTitle">Detailed Rent Calculator</h3>
           <InputIncome/>
           <CalcTable  cat1={this.state.cat1} cat2={this.state.cat2} income={this.state.income} showCalcApp={this.state.showCalcApp}/>
-         <div id="addExpenseWrap" className="effect6" style={this.state.showCalcApp}>
+         <div id="calcApp_addExpenseWrap" className="calcApp_effect6" style={this.state.showCalcApp}>
          <h3>Add Another Expense:</h3>
             <AddRowButton cat1={this.state.cat1} ref="addNewItem" onSubmit={this.handleSubmit} showCalcApp={this.state.showCalcApp} />
           </div>
@@ -341,8 +349,8 @@ render: function(){
   return(
     <div className="calcApp_simpleCalcApp">
     <h3 className="calcApp_calcTitle">Simple Rent Calculator</h3>
-    <input className="incomeInputField" value={this.state.simpleCalcVal} placeholder={'Enter Your Annual Income'} onChange={this.handleSimpleCalcChange}/>
-    <div className="simpleCalc_moneyleft fadeInTransition" style={showSection}><h3>Your Maximum Recommended Rent is:</h3><p className="simpleCalc_output">{this.state.simpleEstimate}</p>
+    <input className="calcApp_incomeInputField" value={this.state.simpleCalcVal} placeholder={'Enter Your Annual Income'} onChange={this.handleSimpleCalcChange}/>
+    <div className="simpleCalc_moneyleft calcApp_fadeInTransition" style={showSection}><h3>Your Maximum Recommended Rent is:</h3><p className="simpleCalc_output">{this.state.simpleEstimate}</p>
         <p className="calcApp_summaryText">Your maximum suggested rent is {this.state.simpleEstimate} and you will have ${numeral(this.state.simpleCalcVal/12-unformatedSimpEst).format('0,0')} left over before taxes and other deductions</p>
     </div>
   </div>
@@ -355,11 +363,11 @@ var calcapp_intro = React.createClass({
     return(
     <div className="calcApp_descriptionContainer">
       <div className="calcApp_typeDescription">
-        <span className="flaticon flaticon-keyboard53 calcApp_typeArrow"></span>
+        <span className="calcAppFont calcAppFont-keyboard53 calcApp_typeArrow"></span>
         <p className="calcApp_typeDescriptionText">(Takes 20 Seconds to Complete)</p>
       </div>
       <div className="calcApp_typeDescription">
-        <span className="flaticon flaticon-keyboard53 calcApp_typeArrow"></span>
+        <span className="calcAppFont calcAppFont-keyboard53 calcApp_typeArrow"></span>
         <p className="calcApp_typeDescriptionText">(Takes 5 to 10 Minutes to Complete)</p>
       </div>
     </div>
@@ -393,12 +401,12 @@ React.render(<App route={evt} />, mountNode);
   var calcType = 'calcapp_intro';
   render(calcType);
 
-document.getElementById("calcApp").addEventListener("click", function(){
+document.getElementById("calcApp_detailedCalc").addEventListener("click", function(){
   var calcType = 'calcapp';
   render(calcType);
 });
 
-document.getElementById("simpleCalcApp").addEventListener("click", function(){
+document.getElementById("calcApp_simpleCalc").addEventListener("click", function(){
   var calcType = 'simpleCalcApp';
   render(calcType);
 });
