@@ -1,3 +1,8 @@
+
+
+var config = require('config.json');
+
+
 module.exports = function(grunt) {
 
     var options = {
