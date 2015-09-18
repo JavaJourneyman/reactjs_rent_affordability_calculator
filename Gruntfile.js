@@ -1,7 +1,6 @@
 
 
-var config = require('config.json');
-
+var config = require('./config.json');
 
 module.exports = function(grunt) {
 
@@ -30,19 +29,13 @@ module.exports = function(grunt) {
         },
         cloudfiles: {
           prod: {
-            // need to input cloudfiles data 
-            'user': 'your Rackspace username',
-            'key': 'your Rackspace API key',
-            'region': 'DFW',
+            'user': config.cloudfiles.user,
+            'key': config.cloudfiles.key,
+            'region': config.cloudfiles.region,
             'upload': [{
-              'container': 'name of your Cloud Files container',
-              'src': 'source/static/**/*',
-              'dest': 'some/folder/',
-              'stripcomponents': 1,
-              'purge': {
-                'emails': ['your@email.com'],
-                'files': ['index.html']
-              }
+              'container': config.cloudfiles.container,
+              'src': config.cloudfiles.source, 
+              'dest': config.cloudfiles.destination
             }]
           }
         }

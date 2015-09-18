@@ -5,6 +5,6 @@
     "region" : "ORD",
     "container" : "rentCalc",
     "source" : "/build/",
-    "destination" : "X",
+    "destination" : ""
   }
 }
