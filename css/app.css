@@ -512,37 +512,37 @@
     }
 
     #calcAppIntroContainer button{
-        padding:0px 30px;
-        font-size:26px;
-        line-height:50px;
-        cursor: pointer;
-        margin:0px 5px;
+        padding: 0px 30px;
+        font-size: 26px;
+        line-height: 50px;
+        cursor:  pointer;
+        margin: 0px 5px;
     }
 
     .calcApp_incomeInputField {
-        border:3px solid green !important;
-        border-radius:5px;
-        font-size:24px !important;
-        line-height:50px;
-        height:50px;
-        padding:0px 20px;
+        border: 3px solid green !important;
+        border-radius: 5px;
+        font-size: 24px !important;
+        line-height: 50px;
+        height: 50px;
+        padding: 0px 20px;
         overflow: hidden !important;
-        width:90% !important;
-        margin-bottom:15px;
-        text-align:center;
-        font-weight:400 !important;
-        color:#2a462a !important;
+        width: 90% !important;
+        margin-bottom: 15px;
+        text-align: center;
+        font-weight: 400 !important;
+        color: #2a462a !important;
     }
 
     #calcApp_mainApp table:nth-child(1){
-        margin-bottom:0px !important;
+        margin-bottom: 0px !important;
     }
 
     .calcApp_footerWrap {
-        margin:30px auto; 
-        width:94%;
-        background-color:red;
-        text-align:center;
+        margin: 30px auto; 
+        padding: 15px;
+        width: 90%;
+        text-align: center;
     }
 
     .calcApp_fadeInTransition{
@@ -553,7 +553,7 @@
     }
 
     .calcApp_introTitle{
-    text-align:center;
+    text-align: center;
     }
 
 
