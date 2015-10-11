@@ -7,6 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 </head>
 
+
+
+
+
 <!-- copy below this --> 
 <div id="copyThis"><link rel="stylesheet" href="http://bf31a77ff265e2770cf6-b93621d1c80661eaa54ee6c583668a9d.r61.cf2.rackcdn.com/rentcalc/build/css/app.min.css"><link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'><div class="calcApp_mainWrapper"><header><div id="calcAppIntroContainer"><h2 class="calcApp_introTitle">How Much Rent Can You Afford?</h2><button id="calcApp_simpleCalc" class="calcApp_selectorButton">Simple Calculator</button><button id="calcApp_detailedCalc" class="calcApp_selectorButton">Detailed Calculator</button></div></header><main id="calcApp_mainApp"></main><div class="calcApp_footerWrap"><p id="calcApp_linkTextArea"></p></div><script src="http://bf31a77ff265e2770cf6-b93621d1c80661eaa54ee6c583668a9d.r61.cf2.rackcdn.com/rentcalc/build/js/app.js"></script></div></div>
 <!-- stop copying here --> 
@@ -45,7 +49,7 @@
       
         </code></pre>
     </div>
-<button onclick="copyToClipboard(document.getElementById('calcApp_codeContainer').innerHTML)">Copy Embed Code</button>
+<button onclick="copyToClipboard(regularPasteContent)">Copy Embed Code</button>
 </div>
 
 <script>
@@ -61,8 +65,14 @@ var randomLinkText = [
 var rand = randomLinkText[Math.floor(Math.random() * randomLinkText.length)];
 // insert random text link at bottom of html 
 $('#calcApp_linkTextArea').html(rand); 
-pasteContent = $('#copyThis').html().replace(/</g, "&lt;").replace(/>/g, "&gt;"); 
-$('#calcApp_codeContainer').html(pasteContent);
+
+regularPasteContent = $('#copyThis').html(); 
+formattedPasteContent = regularPasteContent.replace(/</g, "&lt;").replace(/>/g, "&gt;"); 
+
+$('#calcApp_codeContainer').html(formattedPasteContent);
+
+
+
 
 function copyToClipboard(text) {
     window.prompt("Copy to clipboard: Ctrl+C, Enter", text);

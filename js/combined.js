@@ -192,7 +192,7 @@ netincome = (income*this.props.item.value)/100/12;
   return(
     React.createElement("tr", null, 
       React.createElement("td", {className: "calcApp_expenseNameField"}, React.createElement("span", {className: "calcAppFont calcAppFont-money425 calcApp_expenseIcon"}), React.createElement("span", null, this.props.item.name)), 
-      React.createElement("td", null, React.createElement("span", {className: "calcApp_inputIcon"}, "%"), React.createElement("input", {className: "calcApp_calcInsertExpenseField", value: numeral(this.props.item.value).format('0'), onChange: this.onWithholdChange.bind(this, this.props.item.key), placeholder: "Enter Value"})), 
+      React.createElement("td", null, React.createElement("span", {className: "calcApp_inputIcon"}, "%"), React.createElement("input", {className: "calcApp_calcInsertExpenseField calcApp_calcInsertExpenseField--percent", value: numeral(this.props.item.value).format('0'), onChange: this.onWithholdChange.bind(this, this.props.item.key), placeholder: "Enter Value"})), 
       React.createElement("td", null, numeral(netincome).format('$0'))
     )
     )

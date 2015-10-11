@@ -121,6 +121,14 @@
         font-family: 'PT Sans', sans-serif;
     }
 
+
+    .calcApp_mainWrapper input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
     .calcApp_simpleCalcApp{
         border-radius:5px;
         max-width:600px;
@@ -439,25 +447,37 @@
         padding: 0px 0px 0px 15px !important;
     }
 
-    .calcApp_inputIcon {
-        display:block;
-        opacity:0;
-        background-color:green;
-        height:48px;
-        width:25px;
-        color:white;
-        line-height:52px;
-        position:absolute;
-        top:2px;
-        left:0;
-        bottom:0;
-        z-index:999;
+    .calcApp_calcInsertExpenseField--percent:after{
+        content:" ";
+        background-color:red; 
+        height: 100px; 
+        width: 50px; 
+        display:block; 
+        position:absolute; 
         right:0;
+        top:0;
+    }
+
+    .calcApp_inputIcon {
+        display: block;
+        opacity: 0.5;
+        background-color:green;
+        height: 48px;
+        width: 25px;
+        color: white;
+        line-height: 52px;
+        position: absolute;
+        top: 2px;
+        left: 5px;
+        bottom: 0;
+        z-index: 999;
+        right: 0;
     }
 
     .calcApp_calcInsertExpenseField:focus{
         background-color:rgba(0,255,0,0.1);
         outline:none;
+        border: 1px solid transparent;
     }
 
     .calcApp_calcTitle {
@@ -512,11 +532,12 @@
     }
 
     #calcAppIntroContainer button{
-        padding: 0px 30px;
-        font-size: 26px;
+        padding: 0px 10px;
+        font-size: 22px;
         line-height: 50px;
+        width: 250px;
         cursor:  pointer;
-        margin: 0px 5px;
+        margin: 10px 5px;
     }
 
     .calcApp_incomeInputField {
@@ -537,6 +558,7 @@
     #calcApp_mainApp table:nth-child(1){
         margin-bottom: 0px !important;
     }
+
 
     .calcApp_footerWrap {
         margin: 30px auto; 
