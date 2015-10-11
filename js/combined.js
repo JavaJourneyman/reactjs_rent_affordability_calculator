@@ -192,7 +192,7 @@ netincome = (income*this.props.item.value)/100/12;
   return(
     React.createElement("tr", null, 
       React.createElement("td", {className: "calcApp_expenseNameField"}, React.createElement("span", {className: "calcAppFont calcAppFont-money425 calcApp_expenseIcon"}), React.createElement("span", null, this.props.item.name)), 
-      React.createElement("td", null, React.createElement("span", {className: "calcApp_inputIcon"}, "%"), React.createElement("input", {className: "calcApp_calcInsertExpenseField calcApp_calcInsertExpenseField--percent", value: numeral(this.props.item.value).format('0'), onChange: this.onWithholdChange.bind(this, this.props.item.key), placeholder: "Enter Value"})), 
+      React.createElement("td", null, React.createElement("span", {className: "calcApp_inputIcon"}, "%"), React.createElement("input", {className: "calcApp_calcInsertExpenseField", value: numeral(this.props.item.value).format('0'), onChange: this.onWithholdChange.bind(this, this.props.item.key), placeholder: "Enter Value"})), 
       React.createElement("td", null, numeral(netincome).format('$0'))
     )
     )
@@ -432,11 +432,11 @@ var calcapp_intro = React.createClass({displayName: "calcapp_intro",
     React.createElement("div", {className: "calcApp_descriptionContainer"}, 
       React.createElement("div", {className: "calcApp_typeDescription"}, 
         React.createElement("span", {className: "calcAppFont calcAppFont-keyboard53 calcApp_typeArrow"}), 
-        React.createElement("p", {className: "calcApp_typeDescriptionText"}, "(Takes 20 Seconds to Complete)")
+        React.createElement("p", {className: "calcApp_typeDescriptionText"}, "(Takes 20 Seconds ", React.createElement("br", null), " to Complete)")
       ), 
       React.createElement("div", {className: "calcApp_typeDescription"}, 
         React.createElement("span", {className: "calcAppFont calcAppFont-keyboard53 calcApp_typeArrow"}), 
-        React.createElement("p", {className: "calcApp_typeDescriptionText"}, "(Takes 5 to 10 Minutes to Complete)")
+        React.createElement("p", {className: "calcApp_typeDescriptionText"}, "(Takes 5 to 10 Minutes ", React.createElement("br", null), " to Complete)")
       )
     )
     )

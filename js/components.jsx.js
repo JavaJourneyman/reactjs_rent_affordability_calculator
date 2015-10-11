@@ -124,7 +124,7 @@ netincome = (income*this.props.item.value)/100/12;
   return(
     <tr>
       <td className="calcApp_expenseNameField"><span className="calcAppFont calcAppFont-money425 calcApp_expenseIcon"></span><span>{this.props.item.name}</span></td>
-      <td><span className="calcApp_inputIcon">%</span><input className="calcApp_calcInsertExpenseField calcApp_calcInsertExpenseField--percent" value={numeral(this.props.item.value).format('0')} onChange={this.onWithholdChange.bind(this, this.props.item.key)} placeholder="Enter Value"/></td>
+      <td><span className="calcApp_inputIcon">%</span><input className="calcApp_calcInsertExpenseField" value={numeral(this.props.item.value).format('0')} onChange={this.onWithholdChange.bind(this, this.props.item.key)} placeholder="Enter Value"/></td>
       <td>{numeral(netincome).format('$0')}</td>
     </tr>
     )
@@ -364,11 +364,11 @@ var calcapp_intro = React.createClass({
     <div className="calcApp_descriptionContainer">
       <div className="calcApp_typeDescription">
         <span className="calcAppFont calcAppFont-keyboard53 calcApp_typeArrow"></span>
-        <p className="calcApp_typeDescriptionText">(Takes 20 Seconds to Complete)</p>
+        <p className="calcApp_typeDescriptionText">(Takes 20 Seconds <br/> to Complete)</p>
       </div>
       <div className="calcApp_typeDescription">
         <span className="calcAppFont calcAppFont-keyboard53 calcApp_typeArrow"></span>
-        <p className="calcApp_typeDescriptionText">(Takes 5 to 10 Minutes to Complete)</p>
+        <p className="calcApp_typeDescriptionText">(Takes 5 to 10 Minutes <br/> to Complete)</p>
       </div>
     </div>
     )
