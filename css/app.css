@@ -1,13 +1,12 @@
 /* base.css overrides */
 
-
 @font-face {
     font-family: "calcAppFont";
-    src: url("../assets/icons/flaticon.eot");
-    src: url("../assets/icons/flaticon.eot#iefix") format("embedded-opentype"),
-    url("../assets/icons/flaticon.woff") format("woff"),
-    url("../assets/icons/flaticon.ttf") format("truetype"),
-    url("../assets/icons/flaticon.svg") format("svg");
+    src: url("../build/assets/icons/flaticon.eot");
+    src: url("../build/assets/icons/flaticon.eot#iefix") format("embedded-opentype"),
+    url("../build/assets/icons/flaticon.woff") format("woff"),
+    url("../build/assets/icons/flaticon.ttf") format("truetype"),
+    url("../build/assets/icons/flaticon.svg") format("svg");
     font-weight: normal;
     font-style: normal;
 }
@@ -434,11 +433,12 @@ input::-webkit-inner-spin-button {
 
     .calcApp_calcInsertExpenseField {
         position: relative;
-        border: none;
+        border: 2px solid transparent;
         background-color: transparent;
+        -webkit-box-shadow: none;
+        box-shadow: none;
         margin: 0px;
         width: 100%;
-        border: none;
         font-size: 14px;
         height: 100%;
         font-weight: 200;

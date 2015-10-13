@@ -1,11 +1,42 @@
 
 
-
- curl -s -X POST -d '{"auth":{"RAX-KSKEY:apiKeyCredentials":{"username":"pvijeh","apiKey":"065d1cc6d01ad6dad5b5e8f6e2e9fbef"}}}' -H "Content-type: application/json" https://identity.api.rackspacecloud.com/v2.0/tokens |python -mjson.tool | grep -A 5 token | tail -1
-
+curl -i -X POST https://storage101.ord1.clouddrive.com/v1/MossoCloudFS_714ef022-5f5d-4424-ac61-daad9163eaec/rentCalc/rentcalc/build/assets/icons/flaticon.woff  -H "Access-Control-Allow-Origin: *" -H "X-Auth-Token: AAD2auf2gjr4_KlP1DCb9C-IHFTQXd5vx6kOB0DHpqPctKAmkjyusb4BkXhw3A8H0o_vBU0YynPFrT9Yn-jVNf0q77GgssyuABlIu6GSCjWNuIASUWiMPbrJf2lxssg6yQU06VwT8huJKw" 
 
 
- AABnTcgX-q1GsIclbvEFTYtY6gPtAI_nNf6rqKKyoBq0p3fr3OM8mRTiqRTxPxV_YKPmde6-2AOA_OrHYPD9XBLGs4wL4NTpQU5mJ8gHq5_ah6Wt_cBNwDDU5dgdAx3SqG10P3RAbWEyeA
+curl -i -XPOST -H "x-auth-token: AAD2auf2gjr4_KlP1DCb9C-IHFTQXd5vx6kOB0DHpqPctKAmkjyusb4BkXhw3A8H0o_vBU0YynPFrT9Yn-jVNf0q77GgssyuABlIu6GSCjWNuIASUWiMPbrJf2lxssg6yQU06VwT8huJKw" -H "X-Container-Meta-Access-Control-Allow-Origin: *" https://storage101.ord1.clouddrive.com/v1/MossoCloudFS_714ef022-5f5d-4424-ac61-daad9163eaec/rentCalc/rentcalc/build/assets/icons/flaticon.ttf
+
+curl -i -XPOST -H "x-auth-token: AAD2auf2gjr4_KlP1DCb9C-IHFTQXd5vx6kOB0DHpqPctKAmkjyusb4BkXhw3A8H0o_vBU0YynPFrT9Yn-jVNf0q77GgssyuABlIu6GSCjWNuIASUWiMPbrJf2lxssg6yQU06VwT8huJKw" -H "Access-Control-Allow-Origin: *" https://storage101.ord1.clouddrive.com/v1/MossoCloudFS_714ef022-5f5d-4424-ac61-daad9163eaec/rentCalc/rentcalc/build/assets/icons/flaticon.woff
+
+curl -i -XPOST -H "x-auth-token: AAD2auf2gjr4_KlP1DCb9C-IHFTQXd5vx6kOB0DHpqPctKAmkjyusb4BkXhw3A8H0o_vBU0YynPFrT9Yn-jVNf0q77GgssyuABlIu6GSCjWNuIASUWiMPbrJf2lxssg6yQU06VwT8huJKw" -H "Access-Control-Expose-Headers: Access-Control-Allow-Origin" -H "Access-Control-Allow-Origin: *" https://storage101.ord1.clouddrive.com/v1/MossoCloudFS_714ef022-5f5d-4424-ac61-daad9163eaec/rentCalc/rentcalc/build/assets/icons/flaticon.eot
+
+curl -i -XPOST -H "x-auth-token: AAD2auf2gjr4_KlP1DCb9C-IHFTQXd5vx6kOB0DHpqPctKAmkjyusb4BkXhw3A8H0o_vBU0YynPFrT9Yn-jVNf0q77GgssyuABlIu6GSCjWNuIASUWiMPbrJf2lxssg6yQU06VwT8huJKw" -H "Access-Control-Expose-Headers: Access-Control-Allow-Origin" -H "Access-Control-Allow-Origin: *" https://storage101.ord1.clouddrive.com/v1/MossoCloudFS_714ef022-5f5d-4424-ac61-daad9163eaec/rentCalc/rentcalc/build/assets/icons/flaticon.woff
+
+curl -i -XPOST -H "x-auth-token: AAD2auf2gjr4_KlP1DCb9C-IHFTQXd5vx6kOB0DHpqPctKAmkjyusb4BkXhw3A8H0o_vBU0YynPFrT9Yn-jVNf0q77GgssyuABlIu6GSCjWNuIASUWiMPbrJf2lxssg6yQU06VwT8huJKw" -H "Access-Control-Expose-Headers: Access-Control-Allow-Origin" -H "Access-Control-Allow-Origin: *" https://storage101.ord1.clouddrive.com/v1/MossoCloudFS_714ef022-5f5d-4424-ac61-daad9163eaec/rentCalc/rentcalc/build/assets/icons/flaticon.css
+
+curl -i -XPOST -H "x-auth-token: AAD2auf2gjr4_KlP1DCb9C-IHFTQXd5vx6kOB0DHpqPctKAmkjyusb4BkXhw3A8H0o_vBU0YynPFrT9Yn-jVNf0q77GgssyuABlIu6GSCjWNuIASUWiMPbrJf2lxssg6yQU06VwT8huJKw" -H "Access-Control-Expose-Headers: Access-Control-Allow-Origin" -H "Access-Control-Allow-Origin: *" https://storage101.ord1.clouddrive.com/v1/MossoCloudFS_714ef022-5f5d-4424-ac61-daad9163eaec/rentCalc/rentcalc/build/app.min.css
 
 
- curl -i -X POST https://storage101.lon3.clouddrive.com/v1/MossoCloudFS_714ef022-5f5d-4424-ac61-daad9163eaec/rentCalc/ -H "X-Auth-Token: AABnTcgX-q1GsIclbvEFTYtY6gPtAI_nNf6rqKKyoBq0p3fr3OM8mRTiqRTxPxV_YKPmde6-2AOA_OrHYPD9XBLGs4wL4NTpQU5mJ8gHq5_ah6Wt_cBNwDDU5dgdAx3SqG10P3RAbWEyeA" -H "X-Container-Meta-Access-Control-Allow-Origin: *"
+
+curl -i -XPOST -H "x-auth-token: AAD2auf2gjr4_KlP1DCb9C-IHFTQXd5vx6kOB0DHpqPctKAmkjyusb4BkXhw3A8H0o_vBU0YynPFrT9Yn-jVNf0q77GgssyuABlIu6GSCjWNuIASUWiMPbrJf2lxssg6yQU06VwT8huJKw"  
+
+
+
+
+
+http://bf31a77ff265e2770cf6-b93621d1c80661eaa54ee6c583668a9d.r61.cf2.rackcdn.com/rentCalc/rentcalc/build/assets/icons/flaticon.woff
+http://bf31a77ff265e2770cf6-b93621d1c80661eaa54ee6c583668a9d.r61.cf2.rackcdn.com/assets/icons/flaticon.woff 
+
+
+
+
+
+ curl -d "{\"auth\":{\"RAX-KSKEY:apiKeyCredentials\":{\"username\":\"pvijeh\",\"apiKey\":\"065d1cc6d01ad6dad5b5e8f6e2e9fbef\"}}}" -H "Content-Type: application/json" "https://identity.api.rackspacecloud.com/v2.0/tokens"
+
+
+token: 
+
+AABnTcgX-jJ2TeNMHYecqFSi6k3EIvlVw0GWr5O37G-5FU34l67NSKbNtVBucEVicmL1IROo8EKfkFm2C4NmUNDhDQsCYwGpIHjbRok_F9YhM_TlAmPesq-b6QrTS9ROyXja38x3s3itkQ
+
+endpoint:
+
+MossoCloudFS_714ef022-5f5d-4424-ac61-daad9163eaec
