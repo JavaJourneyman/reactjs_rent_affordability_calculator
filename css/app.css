@@ -567,6 +567,66 @@ input::-webkit-inner-spin-button {
     text-align: center;
     }
 
+#calcApp_embedArea{
+    padding: 15px;
+    border-radius: 4px;
+    max-width:600px;
+    width:80%;
+    margin:30px auto;
+    box-sizing:border-box;
+}    
+
+#calcApp_embedArea p{
+    font-size: 14px; 
+    line-height: 16px; 
+    text-align:center; 
+}
+
+#calcApp_embedArea h3{
+    text-align:center;
+     font-size: 26px;
+     font-weight: 200;
+     margin: 0;
+     padding: 0;
+}
+
+#calcApp_codeContainer{
+    margin:auto;
+    font-size: 10px;
+    line-height: 10px; 
+    font-weight:200;
+    border: 2px solid #999;
+    display: block;
+    padding: 10px;
+    word-wrap: break-word;
+    height: 100px; 
+    overflow-y: scroll;
+    background-color: #333;
+    color: rgba( 250, 250, 250, 0.5);
+}
+
+.calcApp_calcCodeWrap{
+    max-width:400px;
+    padding:15px;
+    margin:auto;
+}
+
+.calcApp_pre{
+    padding:0px;
+}
+
+.calcApp_embbedButton{
+    margin:auto;
+    background-color: orange;
+    display: block;
+    width: 100%;
+    max-width: 250px; 
+}
+
+.calcApp_embbedButton::selection{
+    display:none;
+}
+
 
 
 
