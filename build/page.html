@@ -1,0 +1,73 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>How Much Rent Can You Afford Calculator</title><meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="Quickly find out how much rent you can afford using the rent affordability calculator"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:locale" content="en_US"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="How Much Rent Can You Afford Calculator"/>
+    <meta property="og:description" content="Quickly find out how much rent you can afford using the rent affordability calculator"/>
+    <meta property="og:url" content="http://www.movingtonewyorkguide.com/how-much-rent-can-you-afford-calculator/"/>
+    <meta property="og:site_name" content="Moving to New York Guide"/>
+    <meta property="article:publisher" content="https://www.facebook.com/MovingToNycGuide"/>
+    <link rel="stylesheet" href="http://www.movingtonewyorkguide.com/wp-content/themes/epik/style.css">
+    <link rel="stylesheet" href="hostSpecificStyles.css">
+</head>
+
+<div class="calcApp_pageLoadArea">
+
+</div>
+
+<div id="calcApp_hostSpecificWrapper">
+    <h1>How Much Rent Can You Afford Calculator</h1>
+    <div id="copyThis"><link rel="stylesheet" href="http://bf31a77ff265e2770cf6-b93621d1c80661eaa54ee6c583668a9d.r61.cf2.rackcdn.com/rentcalc/build/app.min.css"><link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'><div class="calcApp_mainWrapper"><header><div id="calcAppIntroContainer"><h2 class="calcApp_introTitle">How Much Rent Can You Afford?</h2><button id="calcApp_simpleCalc" class="calcApp_selectorButton">Simple Calculator</button><button id="calcApp_detailedCalc" class="calcApp_selectorButton">Detailed Calculator</button></div></header><main id="calcApp_mainApp"></main><div class="calcApp_footerWrap"><p id="calcApp_linkTextArea"></p></div><script src="http://bf31a77ff265e2770cf6-b93621d1c80661eaa54ee6c583668a9d.r61.cf2.rackcdn.com/rentcalc/build/app.js"></script></div></div>
+    <div id="calcApp_embedArea" class="calcApp_effect6">
+        <h3>EMBED THIS CALCULATOR ON YOUR SITE</h3>
+                <p>Embed the 'how much rent can I afford calculator' on your website by copying and pasting the code below.</p>
+        <div class="calcApp_calcCodeWrap">
+            <pre class="calcApp_pre"><code id="calcApp_codeContainer">
+            </code></pre>
+        </div>
+    <button class="calcApp_embbedButton" onclick="copyToClipboard(regularPasteContent)">Copy Embed Code</button>
+    </div>
+</div>
+
+<p class="calcApp_hostSpecificDescriptionText">Quickly find out how much apartment you can afford using the rent affordability calculator below.  The quick version will give you a rough estimate in under 30 seconds.  The detailed calculator will give you and more precise estimate based on the details of your lifestyle and other living expenses.</p>
+
+<script>
+var pasteContent = ''; 
+var randomLinkText = [
+'The <a href="http://www.movingtonewyorkguide.com/how-much-rent-can-you-afford-calculator/">How Much Rent Can I Afford?</a> calculator was made by the folks at <a href="http://www.movingtonewyorkguide.com">Moving to New York Guide</a>', 
+'This <a href="http://www.movingtonewyorkguide.com/how-much-rent-can-you-afford-calculator/">apartment rent calculator</a> was made by the folks at <a href="http://www.movingtonewyorkguide.com">Moving to New York Guide</a>', 
+'This <a href="http://www.movingtonewyorkguide.com/how-much-rent-can-you-afford-calculator/">rent budget calculator</a> was made by the folks at <a href="http://www.movingtonewyorkguide.com">Moving to New York Guide</a>',
+'This <a href="http://www.movingtonewyorkguide.com/how-much-rent-can-you-afford-calculator/">rent affordability calculator</a> was made by the folks at <a href="http://www.movingtonewyorkguide.com">Moving to New York Guide</a>',
+'The "<a href="http://www.movingtonewyorkguide.com/how-much-rent-can-you-afford-calculator/">how much apartment can i afford?</a>" calculator was made by the folks at <a href="http://www.movingtonewyorkguide.com">Moving to New York Guide</a>',
+];
+
+var rand = randomLinkText[Math.floor(Math.random() * randomLinkText.length)];
+// insert random text link at bottom of html 
+$('#calcApp_linkTextArea').html(rand); 
+
+regularPasteContent = $('#copyThis').html(); 
+formattedPasteContent = regularPasteContent.replace(/</g, "&lt;").replace(/>/g, "&gt;"); 
+
+$('#calcApp_codeContainer').html(formattedPasteContent);
+
+
+
+
+function copyToClipboard(text) {
+    window.prompt("Copy to clipboard: Ctrl+C, Enter", text);
+  }
+
+</script>
+
+</html>
+
+
+
+

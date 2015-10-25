@@ -1,0 +1,97 @@
+
+.calcApp_introTitle{
+    display:none !important;
+}
+
+#calcApp_linkTextArea{
+    display:none !important;
+}
+
+p {
+    max-width: 600px;
+    line-height: 26px;  
+    margin: auto;
+}
+
+#calcApp_hostSpecificWrapper{
+    background-color: rgb(79, 161, 220);
+    padding: 50px 3% 50px 3%;
+    margin-bottom: 60px; 
+}
+
+.calcApp_typeDescriptionText{
+    color:white; 
+}
+
+.calcApp_typeArrow{
+    color:white; 
+}
+
+#calcApp_hostSpecificWrapper h1{
+    color: white;
+    max-width: 550px;
+    line-height: 42px;
+    font-size: 40px;
+    margin:70px auto 120px auto;  
+    animation-duration: 2s;
+    animation-name: slidein;
+    -webkit-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;   
+}
+
+
+#calcApp_hostSpecificWrapper #calcApp_embedArea{
+    background-color:white; 
+}
+
+#calcApp_hostSpecificWrapper #calcApp_embedArea p {
+    max-width: 450px; 
+    margin-top:15px; 
+}
+
+.calcApp_hostSpecificDescriptionText {
+    margin-bottom: 90px; 
+}
+
+.calcApp_pageLoadArea{
+    background-color: white;
+    height: 100vh;
+    width: 100%;    
+    animation-duration: 2s;
+    animation-name: shrinkLoadArea;
+    -webkit-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+@keyframes shrinkLoadArea {
+    0% { height: 100vh); }
+    55% { height: 100vh; }
+    60% { height: 64vh; }
+    65% { height: 32vh; }
+    70% { height: 16vh; }
+    75% { height: 8vh; }
+    80% { height: 4vh; }
+    85% { height: 2vh; }
+    90% { height: 1vh; }
+    95% { height: .5vh; }
+    100% { height: 0;  }
+}
+
+
+@keyframes slidein {
+    0% { transform: translateY(-100vh);  color:rgb(79, 161, 220);}
+    55% { transform: translateY(-100vh);  color: rgb(79, 161, 220);}
+    60% { transform: translateY(-64vh);  color: rgb(79, 161, 220);}
+    65% { transform: translateY(-32vh);  color: rgb(79, 161, 220);}
+    70% { transform: translateY(-16vh);  color: white;}
+    75% { transform: translateY(-8vh);  color: white;}
+    80% { transform: translateY(-4vh); color: white;}
+    85% { transform: translateY(-2vh);  color: white;}
+    90% { transform: translateY(-1vh);  color: white;}
+    95% { transform: translateY(-.5vh);  color: white;}
+    100% { transform: translateY(0);  color: white;}
+}
+
+transform: translateY(-50%);
