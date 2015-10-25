@@ -8,3 +8,5 @@
     "destination" : "/rentcalc/"
   }
 }
+
+// curl -d "{\"auth\":{\"RAX-KSKEY:apiKeyCredentials\":{\"username\":\"pvijeh\",\"apiKey\":\"065d1cc6d01ad6dad5b5e8f6e2e9fbef\"}}}" -H "Content-Type: application/json" "https://identity.api.rackspacecloud.com/v2.0/tokens"
