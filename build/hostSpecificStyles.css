@@ -60,7 +60,7 @@ p {
     position:absolute; 
     text-align: center;
     width:100%; 
-    animation-duration: 0.5s;
+    animation-duration: 0.3s;
     animation-name: loadSinner;
     -webkit-animation-fill-mode: forwards;
     -o-animation-fill-mode: forwards;
@@ -77,14 +77,13 @@ p {
 }
 
 .calcApp_hostSpecificDescriptionText {
-    margin-bottom: 90px; 
+    margin-bottom: 30px; 
 }
 
 .calcApp_hostSpecificDescriptionTitle {
     max-width: 600px; 
     margin: 30px auto;
 }
-
 
 .calcApp_pageLoadArea{
     background-color: white;
@@ -126,16 +125,16 @@ p {
 }
 
 @keyframes loadSinner{
-    0% { top:1500px; }
+    0% { top:105vh; }
     100% { top:0px; }   
 }
 
 @keyframes spinnerColor {
-    0% { fill: black; stroke: black; opacity:1;}
-    30% { fill: black; stroke: black; opacity:1;}
-    70% { fill: black; stroke: black; opacity:1;}
-    76% { fill: black; stroke: black; opacity:1;}
-    77% { fill: white;  stroke: white; opacity:1;}
+    0% { fill: black; stroke: black; opacity:.75;}
+    30% { fill: black; stroke: black; opacity:.75;}
+    70% { fill: black; stroke: black; opacity:.75;}
+    76% { fill: black; stroke: black; opacity:.75;}
+    77% { fill: white;  stroke: white; opacity:.75;}
     100% { fill: white; stroke: white; opacity:0; }
 }
 
