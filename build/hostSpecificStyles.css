@@ -96,11 +96,6 @@ p {
     animation-fill-mode: forwards;
 }
 
-.calcApp_loadSpinnerThing{
-    fill:"#000";
-    stroke:"#000";
-}
-
 @keyframes shrinkLoadArea {
     0% { height: 100vh); }
     73% { height: 100vh; }
@@ -116,10 +111,10 @@ p {
 }
 
 @keyframes titleColor {
-    0% { color: black; opacity:0;}
-    30% { color: black; opacity:0;}
-    70% { color: black; opacity:1;}
-    76% { color: black; }
+    0% { color: rgb(79, 161, 220); opacity:0;}
+    30% { color: rgb(79, 161, 220); opacity:0;}
+    70% { color: rgb(79, 161, 220); opacity:1;}
+    76% { color: rgb(79, 161, 220); }
     76.5% { color: white; }
     100% { color: white; }
 }
@@ -130,11 +125,11 @@ p {
 }
 
 @keyframes spinnerColor {
-    0% { fill: black; stroke: black; opacity:.75;}
-    30% { fill: black; stroke: black; opacity:.75;}
-    70% { fill: black; stroke: black; opacity:.75;}
-    76% { fill: black; stroke: black; opacity:.75;}
-    77% { fill: white;  stroke: white; opacity:.75;}
+    0% { fill: rgb(79, 161, 220); stroke: rgb(79, 161, 220); opacity:.40;}
+    30% { fill: rgb(79, 161, 220); stroke: rgb(79, 161, 220); opacity:.40;}
+    70% { fill: rgb(79, 161, 220); stroke: rgb(79, 161, 220); opacity:.40;}
+    76% { fill: rgb(79, 161, 220); stroke: rgb(79, 161, 220); opacity:.40;}
+    77% { fill: white;  stroke: white; opacity:.40;}
     100% { fill: white; stroke: white; opacity:0; }
 }
 
