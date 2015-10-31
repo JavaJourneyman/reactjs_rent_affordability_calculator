@@ -109,6 +109,7 @@
     padding:5px;  
     border:2px solid rgba(0, 128, 0, 0.3);
     border-radius:10px;
+    width: 40px; 
 }
 
     .calcApp_mainWrapper {
@@ -120,13 +121,22 @@
         font-family: 'PT Sans', sans-serif;
     }
 
-
     .calcApp_mainWrapper input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    /* display: none; <- Crashes Chrome on hover */
-    -webkit-appearance: none;
-    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
-}
+        input::-webkit-inner-spin-button {
+            /* display: none; <- Crashes Chrome on hover */
+            -webkit-appearance: none;
+            margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+    }
+
+    .calcApp_mainWrapper input[type=number]::-webkit-outer-spin-button,
+        input[type=number]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+    }
+
+    .calcApp_mainWrapper input[type=number] {
+        -moz-appearance:textfield;
+    }
 
     .calcApp_simpleCalcApp{
         border-radius:5px;
@@ -136,27 +146,33 @@ input::-webkit-inner-spin-button {
         text-align:center;
     }
 
-    .calcApp_selectorButton{
-        background-color:orange;
-        color:white;
-        font-weight:thin;
-        box-shadow:none;
-        border:none;
-        border-radius:5px;
-        vertical-align:top;
-        font-size:18px !important;
-        text-transform: uppercase;;
-        -webkit-box-shadow:     3px 3px 4px 0px rgba(50, 50, 50, 0.75);
-        -moz-box-shadow:        3px 3px 4px 0px rgba(50, 50, 50, 0.75);
-        box-shadow:                 3px 3px 4px 0px rgba(50, 50, 50, 0.75);
+    .calcApp_selectorButton {
+          user-select: none;
+          border-radius: 5px;
+          font-size: 18px;
+          display: inline-block;
+          background-color: #e5e5e5;
+          padding: 20px 30px;
+          margin: 15px 0px;
+          color: #444;
+          cursor: pointer;
+          box-shadow: 1px 2px 5px rgba(0,0,0, .5);
+          transform: scale(.99);
+          transition: transform .1s, box-shadow .2s, background-color .5s;
+    }
+
+    .calcApp_selectorButton:hover {
+            transform: scale(1);
+            box-shadow: 1px 5px 8px rgba(0,0,0, .5);
+    }
+
+    .calcApp_selectorButton:active {
+        transform: scale(.98);
     }
 
     ._calcApp_selectorButton--active{
-        opacity:0.75;
-        margin-top:3px !important;
-        -webkit-box-shadow: 1px 1px 1px 0px rgba(50, 50, 50, 0.25);
-        -moz-box-shadow:    1px 1px 1px 0px rgba(50, 50, 50, 0.25);
-        box-shadow:         1px 1px 1px 0px rgba(50, 50, 50, 0.25); 
+      background-color: #ffa210;
+      color: #fff;
     }
 
     .calcApp_selectorButton:focus{  
@@ -223,11 +239,11 @@ input::-webkit-inner-spin-button {
     }
 
     #calcApp_mainApp {
-        padding: 15px 0 0 0;
+        padding: 5px 0 0 0;
         border-radius: 5px;
         max-width: 600px;
         width: 96%;
-        margin: 15px auto;
+        margin: 0px auto 15px auto;
         text-align: center;
     }
 
@@ -444,6 +460,7 @@ input::-webkit-inner-spin-button {
         font-weight: 200;
         text-align: center;
         font-style: italic;
+        height: 46px; 
         padding: 0px 0px 0px 15px !important;
     }
 
@@ -503,14 +520,14 @@ input::-webkit-inner-spin-button {
     .calcApp_typeDescriptionText {
         margin:5px;
         padding:0;
-        font-size: 14px; 
-        line-height: 16px; 
+        font-size: 12px; 
+        line-height: 14px; 
     }
 
     .calcApp_typeArrow {
-        display:block;
-        font-size:30px;
-        margin-top: -20px;
+        display:inline-block;
+        font-size: 20px;
+        margin-top: -40px;
         -webkit-transform: rotate(-90deg);
         -moz-transform: rotate(-90deg);
         -ms-transform: rotate(-90deg);
@@ -520,16 +537,6 @@ input::-webkit-inner-spin-button {
 
     .calcApp_descriptionContainer {
         text-align:center;
-    }
-
-    #calcAppIntroContainer button{
-       padding: 15px 10px;
-        font-size: 22px;
-        line-height: 16px;
-        font-size: 16px !important;
-        width: 150px;
-        cursor: pointer;
-        margin: 10px 5px;
     }
 
     .calcApp_incomeInputField {

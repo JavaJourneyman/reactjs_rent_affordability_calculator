@@ -57,24 +57,37 @@ module.exports = function(grunt) {
             target: {
               files: [{
                 expand: true,
-                cwd: 'css/',
+                cwd: 'dist/',
                 src: ['*.css', ' *.css'],
                 dest: 'build/',
                 ext: '.min.css'
               }]
             }
           },
+          autoprefixer: {
+            options: {
+                browsers: ['last 2 versions', 'ie 8', 'ie 9', '> 1%']
+            },
+            main: {
+                expand: true,
+                flatten: true,
+                src: 'css/*.css',
+                dest: 'dist/'
+            }
+        },
           exec: {
             copy_assets: 'cp -R assets build/',
-            setcors1: 'curl -i -XPOST -H "x-auth-token: AACUAiZaikCAqU1d2pQCuLKC39F-c7nD-5e3mWdalaGt56-P3fAE3s_IDQXpIqkyt6-HcQa0Je_SuZgty9iMFHPcotFYWHBHfwR0iexSLNySCXkA8cV5wVzJu20KuYMKtNiXjolTot3QmA" -H "Access-Control-Expose-Headers: Access-Control-Allow-Origin" -H "Access-Control-Allow-Origin: *" https://storage101.ord1.clouddrive.com/v1/MossoCloudFS_714ef022-5f5d-4424-ac61-daad9163eaec/rentCalc/rentcalc/build/assets/icons/flaticon.ttf', 
-            setcors2: 'curl -i -XPOST -H "x-auth-token: AACUAiZaikCAqU1d2pQCuLKC39F-c7nD-5e3mWdalaGt56-P3fAE3s_IDQXpIqkyt6-HcQa0Je_SuZgty9iMFHPcotFYWHBHfwR0iexSLNySCXkA8cV5wVzJu20KuYMKtNiXjolTot3QmA" -H "Access-Control-Expose-Headers: Access-Control-Allow-Origin" -H "Access-Control-Allow-Origin: *" https://storage101.ord1.clouddrive.com/v1/MossoCloudFS_714ef022-5f5d-4424-ac61-daad9163eaec/rentCalc/rentcalc/build/assets/icons/flaticon.svg',
-            setcors3: 'curl -i -XPOST -H "x-auth-token: AACUAiZaikCAqU1d2pQCuLKC39F-c7nD-5e3mWdalaGt56-P3fAE3s_IDQXpIqkyt6-HcQa0Je_SuZgty9iMFHPcotFYWHBHfwR0iexSLNySCXkA8cV5wVzJu20KuYMKtNiXjolTot3QmA" -H "Access-Control-Expose-Headers: Access-Control-Allow-Origin" -H "Access-Control-Allow-Origin: *" https://storage101.ord1.clouddrive.com/v1/MossoCloudFS_714ef022-5f5d-4424-ac61-daad9163eaec/rentCalc/rentcalc/build/assets/icons/flaticon.eot',
-            setcors4: 'curl -i -XPOST -H "x-auth-token: AACUAiZaikCAqU1d2pQCuLKC39F-c7nD-5e3mWdalaGt56-P3fAE3s_IDQXpIqkyt6-HcQa0Je_SuZgty9iMFHPcotFYWHBHfwR0iexSLNySCXkA8cV5wVzJu20KuYMKtNiXjolTot3QmA" -H "Access-Control-Expose-Headers: Access-Control-Allow-Origin" -H "Access-Control-Allow-Origin: *" https://storage101.ord1.clouddrive.com/v1/MossoCloudFS_714ef022-5f5d-4424-ac61-daad9163eaec/rentCalc/rentcalc/build/assets/icons/flaticon.woff',
-            setcors5: 'curl -i -XPOST -H "x-auth-token: AACUAiZaikCAqU1d2pQCuLKC39F-c7nD-5e3mWdalaGt56-P3fAE3s_IDQXpIqkyt6-HcQa0Je_SuZgty9iMFHPcotFYWHBHfwR0iexSLNySCXkA8cV5wVzJu20KuYMKtNiXjolTot3QmA" -H "Access-Control-Expose-Headers: Access-Control-Allow-Origin" -H "Access-Control-Allow-Origin: *" https://storage101.ord1.clouddrive.com/v1/MossoCloudFS_714ef022-5f5d-4424-ac61-daad9163eaec/rentCalc/rentcalc/build/assets/icons/flaticon.css'
+            setcors1: 'curl -i -XPOST -H "x-auth-token: AAAzQwHME9wpgc2k3xAvZWJnF2D7wVnnPUYtjt7rRTlZ3M3zn_dNyBhsntMZgHeGniMogdhubByX4-c-06C6-NCJlput5waJxSEZ5shfth2xS8Z4--RXXqRCt7tkSq9l2Z5ltYe4-kCWzQ" -H "Access-Control-Expose-Headers: Access-Control-Allow-Origin" -H "Access-Control-Allow-Origin: *" https://storage101.ord1.clouddrive.com/v1/MossoCloudFS_714ef022-5f5d-4424-ac61-daad9163eaec/rentCalc/rentcalc/build/assets/icons/flaticon.ttf', 
+            setcors2: 'curl -i -XPOST -H "x-auth-token: AAAzQwHME9wpgc2k3xAvZWJnF2D7wVnnPUYtjt7rRTlZ3M3zn_dNyBhsntMZgHeGniMogdhubByX4-c-06C6-NCJlput5waJxSEZ5shfth2xS8Z4--RXXqRCt7tkSq9l2Z5ltYe4-kCWzQ" -H "Access-Control-Expose-Headers: Access-Control-Allow-Origin" -H "Access-Control-Allow-Origin: *" https://storage101.ord1.clouddrive.com/v1/MossoCloudFS_714ef022-5f5d-4424-ac61-daad9163eaec/rentCalc/rentcalc/build/assets/icons/flaticon.svg',
+            setcors3: 'curl -i -XPOST -H "x-auth-token: AAAzQwHME9wpgc2k3xAvZWJnF2D7wVnnPUYtjt7rRTlZ3M3zn_dNyBhsntMZgHeGniMogdhubByX4-c-06C6-NCJlput5waJxSEZ5shfth2xS8Z4--RXXqRCt7tkSq9l2Z5ltYe4-kCWzQ" -H "Access-Control-Expose-Headers: Access-Control-Allow-Origin" -H "Access-Control-Allow-Origin: *" https://storage101.ord1.clouddrive.com/v1/MossoCloudFS_714ef022-5f5d-4424-ac61-daad9163eaec/rentCalc/rentcalc/build/assets/icons/flaticon.eot',
+            setcors4: 'curl -i -XPOST -H "x-auth-token: AAAzQwHME9wpgc2k3xAvZWJnF2D7wVnnPUYtjt7rRTlZ3M3zn_dNyBhsntMZgHeGniMogdhubByX4-c-06C6-NCJlput5waJxSEZ5shfth2xS8Z4--RXXqRCt7tkSq9l2Z5ltYe4-kCWzQ" -H "Access-Control-Expose-Headers: Access-Control-Allow-Origin" -H "Access-Control-Allow-Origin: *" https://storage101.ord1.clouddrive.com/v1/MossoCloudFS_714ef022-5f5d-4424-ac61-daad9163eaec/rentCalc/rentcalc/build/assets/icons/flaticon.woff',
+            setcors5: 'curl -i -XPOST -H "x-auth-token: AAAzQwHME9wpgc2k3xAvZWJnF2D7wVnnPUYtjt7rRTlZ3M3zn_dNyBhsntMZgHeGniMogdhubByX4-c-06C6-NCJlput5waJxSEZ5shfth2xS8Z4--RXXqRCt7tkSq9l2Z5ltYe4-kCWzQ" -H "Access-Control-Expose-Headers: Access-Control-Allow-Origin" -H "Access-Control-Allow-Origin: *" https://storage101.ord1.clouddrive.com/v1/MossoCloudFS_714ef022-5f5d-4424-ac61-daad9163eaec/rentCalc/rentcalc/build/assets/icons/flaticon.css'
           },
-
           watch: {
-
+              scripts: {
+                files: '**/*.js',
+                tasks: ['react', 'uglify']
+              },
           },
           cloudfiles: {
             prod: {
@@ -97,6 +110,8 @@ module.exports = function(grunt) {
      grunt.loadNpmTasks('grunt-contrib-cssmin');
      grunt.loadNpmTasks('grunt-react');
      grunt.loadNpmTasks('grunt-exec');
+     grunt.loadNpmTasks('grunt-contrib-watch');
+     grunt.loadNpmTasks('grunt-autoprefixer');
       grunt.registerTask('default', ['connect', 'open', 'watch']);    
-      grunt.registerTask('build', ['react', 'uglify', 'cssmin']);    
+      grunt.registerTask('build', ['react', 'uglify', 'autoprefixer', 'cssmin']);    
 };

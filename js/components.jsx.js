@@ -107,7 +107,7 @@ var CalcTable = React.createClass({
 });
 
 var WithholdingsRow = React.createClass({
-onWithholdChange: function(evt){
+onWithholdChange: function(evt, event){
 
   // this tracks the key of the modified input
   var mod = evt -1;
@@ -125,14 +125,15 @@ netincome = (income*this.props.item.value)/100/12;
     <tr>
       <td className="calcApp_expenseNameField"><span className="calcAppFont calcAppFont-money425 calcApp_expenseIcon"></span><span>{this.props.item.name}</span></td>
       <td><span className="calcApp_inputIcon">%</span><input className="calcApp_calcInsertExpenseField" value={numeral(this.props.item.value).format('0')} onChange={this.onWithholdChange.bind(this, this.props.item.key)} placeholder="Enter Value"/></td>
-      <td>{numeral(netincome).format('$0')}</td>
+      <td>{numeral(netincome).format('$0,000')}</td>
     </tr>
     )
 }
 });
 
 var CalcRow = React.createClass({
-  handleChange: function(evt){
+  handleChange: function(evt, event){
+
         // links to action in store.js
         //modified input
         var mod = evt; 
@@ -214,7 +215,7 @@ var InputIncome = React.createClass({
       income: ''
     }
   },
-  handleIncomeInput: function (){
+  handleIncomeInput: function (event){
    var inc = event.target.value;
   this.setState({
     income : inc
@@ -327,10 +328,8 @@ var simpleCalcApp = React.createClass({
       simpleEstimate: '0'
     }
   },
-handleSimpleCalcChange: function(){
-
+handleSimpleCalcChange: function(event){
   var simVal = event.target.value;
-
 
   this.setState({
     simpleCalcVal : simVal,

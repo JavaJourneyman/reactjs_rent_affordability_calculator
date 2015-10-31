@@ -175,7 +175,7 @@ var CalcTable = React.createClass({displayName: "CalcTable",
 });
 
 var WithholdingsRow = React.createClass({displayName: "WithholdingsRow",
-onWithholdChange: function(evt){
+onWithholdChange: function(evt, event){
 
   // this tracks the key of the modified input
   var mod = evt -1;
@@ -193,14 +193,15 @@ netincome = (income*this.props.item.value)/100/12;
     React.createElement("tr", null, 
       React.createElement("td", {className: "calcApp_expenseNameField"}, React.createElement("span", {className: "calcAppFont calcAppFont-money425 calcApp_expenseIcon"}), React.createElement("span", null, this.props.item.name)), 
       React.createElement("td", null, React.createElement("span", {className: "calcApp_inputIcon"}, "%"), React.createElement("input", {className: "calcApp_calcInsertExpenseField", value: numeral(this.props.item.value).format('0'), onChange: this.onWithholdChange.bind(this, this.props.item.key), placeholder: "Enter Value"})), 
-      React.createElement("td", null, numeral(netincome).format('$0'))
+      React.createElement("td", null, numeral(netincome).format('$0,000'))
     )
     )
 }
 });
 
 var CalcRow = React.createClass({displayName: "CalcRow",
-  handleChange: function(evt){
+  handleChange: function(evt, event){
+
         // links to action in store.js
         //modified input
         var mod = evt; 
@@ -282,7 +283,7 @@ var InputIncome = React.createClass({displayName: "InputIncome",
       income: ''
     }
   },
-  handleIncomeInput: function (){
+  handleIncomeInput: function (event){
    var inc = event.target.value;
   this.setState({
     income : inc
@@ -395,10 +396,8 @@ var simpleCalcApp = React.createClass({displayName: "simpleCalcApp",
       simpleEstimate: '0'
     }
   },
-handleSimpleCalcChange: function(){
-
+handleSimpleCalcChange: function(event){
   var simVal = event.target.value;
-
 
   this.setState({
     simpleCalcVal : simVal,
