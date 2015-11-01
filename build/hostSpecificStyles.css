@@ -38,7 +38,12 @@ p {
     font-size: 40px;
     margin:60px auto 30px auto;  
     clear:both; 
+    -webkit-animation-duration: 3s;
+    -moz-animation-duration: 3s;
+    -o-animation-duration: 3s;  
     animation-duration: 3s;
+    -webkit-animation-name: titleColor;
+    -o-animation-name: titleColor;
     animation-name: titleColor;
     -webkit-animation-fill-mode: forwards;
     -o-animation-fill-mode: forwards;
@@ -53,6 +58,8 @@ p {
     -moz-animation-duration: 3s;
     -o-animation-duration: 3s;
     animation-duration: 3s;
+    -webkit-animation-name: spinnerColor;
+    -o-animation-name: spinnerColor;
     animation-name: spinnerColor;
     -webkit-animation-fill-mode: forwards;
     -moz-animation-fill-mode: forwards;
@@ -68,6 +75,8 @@ p {
     -moz-animation-duration: 1s;
     -o-animation-duration: 1s;
     animation-duration: 1s;
+    -webkit-animation-name: loadSinner;
+    -o-animation-name: loadSinner;
     animation-name: loadSinner;
     -webkit-animation-fill-mode: forwards;
     -moz-animation-fill-mode: forwards;
@@ -86,11 +95,13 @@ p {
 
 .calcApp_hostSpecificDescriptionText {
     margin-bottom: 30px; 
+    width: 90%; 
 }
 
 .calcApp_hostSpecificDescriptionTitle {
     max-width: 600px; 
     margin: 30px auto;
+    width: 90%; 
 }
 
 .calcApp_pageLoadArea{
@@ -101,6 +112,8 @@ p {
     -moz-animation-duration: 3s;
     -o-animation-duration: 3s;
     animation-duration: 3s;
+    -webkit-animation-name: shrinkLoadArea;
+    -o-animation-name: shrinkLoadArea;
     animation-name: shrinkLoadArea;
     -webkit-animation-fill-mode: forwards;
     -moz-animation-fill-mode: forwards;
@@ -108,7 +121,13 @@ p {
     animation-fill-mode: forwards;
 }
 
-
+code, pre {
+-moz-white-space:-moz-pre !important;
+-moz-white-space: pre !important;
+word-wrap:break-word !important;
+word-wrap:-moz-break-word !important;
+}
+    
 @-webkit-keyframes shrinkLoadArea {
     0% { height: 100vh); }
     73% { height: 100vh; }
@@ -122,35 +141,6 @@ p {
     96% { height: .5vh; }
     100% { height: 0; }
 }
-
-@-moz-keyframes shrinkLoadArea {
-    0% { height: 100vh); }
-    73% { height: 100vh; }
-    76% { height: 64vh; }
-    79% { height: 32vh; }
-    81% { height: 16vh; }
-    84% { height: 8vh; }
-    87% { height: 4vh; }
-    90% { height: 2vh; }
-    93% { height: 1vh; }
-    96% { height: .5vh; }
-    100% { height: 0; }
-}
-
-@-o-keyframes shrinkLoadArea {
-    0% { height: 100vh); }
-    73% { height: 100vh; }
-    76% { height: 64vh; }
-    79% { height: 32vh; }
-    81% { height: 16vh; }
-    84% { height: 8vh; }
-    87% { height: 4vh; }
-    90% { height: 2vh; }
-    93% { height: 1vh; }
-    96% { height: .5vh; }
-    100% { height: 0; }
-}
-
 
 @keyframes shrinkLoadArea {
     0% { height: 100vh); }
@@ -166,18 +156,41 @@ p {
     100% { height: 0; }
 }
 
+@-webkit-keyframes titleColor {
+    0% { color: rgb(79, 161, 220); opacity:0;}
+    30% { color: rgb(79, 161, 220); opacity:0;}
+    70% { color: rgb(79, 161, 220); opacity:1;}
+    76% { color: rgb(79, 161, 220); }
+    77% { color: #ffffff; }
+    100% { color: #ffffff; }
+}
+
 @keyframes titleColor {
     0% { color: rgb(79, 161, 220); opacity:0;}
     30% { color: rgb(79, 161, 220); opacity:0;}
     70% { color: rgb(79, 161, 220); opacity:1;}
     76% { color: rgb(79, 161, 220); }
-    76.5% { color: white; }
-    100% { color: white; }
+    77% { color: #ffffff; }
+    100% { color: #ffffff; }
+}
+
+@-webkit-keyframes loadSinner{
+    0% { top:105vh; }
+    100% { top:0px; }   
 }
 
 @keyframes loadSinner{
     0% { top:105vh; }
     100% { top:0px; }   
+}
+
+@-webkit-keyframes spinnerColor {
+    0% { fill: rgb(79, 161, 220); stroke: rgb(79, 161, 220); opacity:.40;}
+    30% { fill: rgb(79, 161, 220); stroke: rgb(79, 161, 220); opacity:.40;}
+    70% { fill: rgb(79, 161, 220); stroke: rgb(79, 161, 220); opacity:.40;}
+    76% { fill: rgb(79, 161, 220); stroke: rgb(79, 161, 220); opacity:.40;}
+    77% { fill: white;  stroke: white; opacity:.40;}
+    100% { fill: white; stroke: white; opacity:0; }
 }
 
 @keyframes spinnerColor {
@@ -188,4 +201,5 @@ p {
     77% { fill: white;  stroke: white; opacity:.40;}
     100% { fill: white; stroke: white; opacity:0; }
 }
+
 

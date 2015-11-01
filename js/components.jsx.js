@@ -123,7 +123,8 @@ netincome = (income*this.props.item.value)/100/12;
 
   return(
     <tr>
-      <td className="calcApp_expenseNameField"><span className="calcAppFont calcAppFont-money425 calcApp_expenseIcon"></span><span>{this.props.item.name}</span></td>
+    <td className="calcAppFont calcAppFont-money425 calcApp_expenseIcon"></td>
+      <td className="calcApp_expenseNameField">{this.props.item.name}</td>
       <td><span className="calcApp_inputIcon">%</span><input className="calcApp_calcInsertExpenseField" value={numeral(this.props.item.value).format('0')} onChange={this.onWithholdChange.bind(this, this.props.item.key)} placeholder="Enter Value"/></td>
       <td>{numeral(netincome).format('$0,000')}</td>
     </tr>
@@ -149,7 +150,8 @@ var CalcRow = React.createClass({
   render: function() {
         return(
         <tr>
-            <td className="calcApp_expenseNameField"><span className={this.props.item.icon}></span><span>{this.props.item.name}</span></td>
+            <td className={this.props.item.icon}></td>
+            <td className="calcApp_expenseNameField">{this.props.item.name}</td>
             <td><span className="calcApp_inputIcon">$</span><input 
                         type="number" 
                         className="calcApp_calcInsertExpenseField" 
