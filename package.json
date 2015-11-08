@@ -4,11 +4,9 @@
   "description": "Todo example for the reflux project",
   "main": "index.js",
   "scripts": {
-    "prepublish": "bower install",
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "MIT",
+  "license": "Creative Commons Attribution 2.0 Generic ",
   "devDependencies": {
     "autoprefixer-core": "^6.0.1",
     "grunt": "^0.4.5",
