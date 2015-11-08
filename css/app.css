@@ -100,13 +100,7 @@
     content: "\e01b";
 }
 
-.calcApp_expenseIcon {
-    color:rgba(0, 128, 0, 0.6);
-    font-size:35px;
-    line-height:30px;
-}
-
-    .calcApp_mainWrapper {
+.calcApp_mainWrapper {
         max-width: 750px;
         margin: 45px auto;
         -webkit-box-sizing: border-box;
@@ -132,7 +126,33 @@
         -moz-appearance:textfield;
     }
 
-    .calcApp_simpleCalcApp{
+.calcApp_mainWrapper button, li, p, ul, ol, table, tr, td, p, h1, h2, h3, h4, h5, h6, span, div, thead, tbody, input, form, header {
+    background-color:initial;
+    padding:initial;
+    height:initial;
+    width:initial;
+    min-height:initial;
+    min-width:initial; 
+    color: initial;
+    border-left:initial;
+    border-right:initial;
+    border-bottom:initial;
+    border-top:initial;
+    font-size:initial;
+    line-height: initial;
+}
+
+.calcApp_mainWrapper * {
+    all: unset;
+}
+
+.calcApp_mainWrapper .calcApp_expenseIcon {
+    color:rgba(0, 128, 0, 0.6);
+    font-size:35px;
+    line-height:30px;
+}
+
+.calcApp_mainWrapper .calcApp_simpleCalcApp{
         border-radius:5px;
         max-width:600px;
         padding:0px 0px;
@@ -140,7 +160,7 @@
         text-align:center;
     }
 
-    .calcApp_selectorButton {
+    .calcApp_mainWrapper .calcApp_selectorButton {
           user-select: none;
           border-radius: 5px;
           font-size: 18px;
@@ -155,30 +175,30 @@
           transition: transform .1s, box-shadow .2s, background-color .5s;
     }
 
-    .calcApp_selectorButton:hover {
+    .calcApp_mainWrapper .calcApp_selectorButton:hover {
             transform: scale(1);
             box-shadow: 1px 5px 8px rgba(0,0,0, .5);
     }
 
-    .calcApp_selectorButton:active {
+    .calcApp_mainWrapper .calcApp_selectorButton:active {
         transform: scale(.98);
     }
 
-    ._calcApp_selectorButton--active{
+    .calcApp_mainWrapper ._calcApp_selectorButton--active{
       background-color: #ffa210;
       color: #fff;
     }
 
-    .calcApp_selectorButton:focus{  
+    .calcApp_mainWrapper .calcApp_selectorButton:focus{  
          outline: 0;
        }
 
-    .calcApp_instructionsLabel{
+    .calcApp_mainWrapper .calcApp_instructionsLabel{
         color:green;
         font-weight:bold;
     }
 
-    .calcApp_summaryText{
+    .calcApp_mainWrapper .calcApp_summaryText{
         color:white;
         margin:0px auto;
         max-width:300px;
@@ -186,11 +206,11 @@
         line-height: 16px;
     }
 
-    .calcApp_simpleCalcApp p{
+    .calcApp_mainWrapper .calcApp_simpleCalcApp p, span{
     color:white;
     }
 
-    .simpleCalc_output {
+    .calcApp_mainWrapper .simpleCalc_output {
         display:inline-block;
         max-width:350px;
         width:96%;
@@ -202,7 +222,7 @@
         color: white !important; 
     }
 
-    .simpleCalc_moneyleft {
+    .calcApp_mainWrapper .simpleCalc_moneyleft {
         min-height: 200px;
         margin-top: 20px;
         background-color:#222 !important;
@@ -212,7 +232,7 @@
         border-bottom-right-radius: 5px; 
     }
 
-    .simpleCalc_moneyleft h3 {
+    .calcApp_mainWrapper .simpleCalc_moneyleft h3 {
         border-bottom:3px solid rgba(255,255,255,.1);
         width:90%;
         margin:10px auto;
@@ -221,7 +241,7 @@
         text-transform: uppercase; 
     }
 
-    #calcApp_sumedFunds {
+    .calcApp_mainWrapper #calcApp_sumedFunds {
         display:inline-block;
         max-width:350px;
         width:96%;
@@ -232,7 +252,7 @@
         text-align:center;
     }
 
-    #calcApp_mainApp {
+    .calcApp_mainWrapper #calcApp_mainApp {
         padding: 5px 0 0 0;
         border-radius: 5px;
         max-width: 600px;
@@ -241,7 +261,7 @@
         text-align: center;
     }
 
-    .calcApp_effect6
+    .calcApp_mainWrapper .calcApp_effect6
     {
         position:relative;       
         -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
@@ -249,7 +269,7 @@
                 box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
     }
 
-    .calcApp_effect6:before, .calcApp_effect6:after
+    .calcApp_mainWrapper .calcApp_effect6:before, .calcApp_effect6:after
     {
         content:"";
         position:absolute; 
@@ -264,7 +284,7 @@
         border-radius:100px / 10px;
     }
 
-    #calcApp_mainApp table{
+    .calcApp_mainWrapper #calcApp_mainApp table{
         border-collapse:collapse;
         display:inline-block;
         max-width:550px;
@@ -274,38 +294,38 @@
         line-height:35px !important;
     }
 
-    #calcApp_mainApp tbody{
+    .calcApp_mainWrapper #calcApp_mainApp tbody{
     border:0px !important;
     }
 
-    #calcApp_mainApp td{
+    .calcApp_mainWrapper #calcApp_mainApp td{
     position:relative;
     border:0px !important;
     }
 
-    #calcApp_mainApp tr:hover .inputIcon{
+    .calcApp_mainWrapper #calcApp_mainApp tr:hover .inputIcon{
         opacity:1;
     }
 
-    #calcApp_mainApp tr:hover{
+    .calcApp_mainWrapper #calcApp_mainApp tr:hover{
     background-color:rgba(0,0,0,.1);
     }
     
-    #calcApp_mainApp tr input{
+    .calcApp_mainWrapper #calcApp_mainApp tr input{
     border:2px solid transparent !important;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     }
         
-    #calcApp_mainApp tr:hover input{
+    .calcApp_mainWrapper #calcApp_mainApp tr:hover input{
     border:2px solid green !important;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     }
     
-    .calcApp_expenseNameField {
+    .calcApp_mainWrapper .calcApp_expenseNameField {
         text-align: left;
         color: green;
         font-size: 18px;
@@ -313,7 +333,7 @@
         font-weight: 200;
     }
 
-    .calcApp_instructions{
+    .calcApp_mainWrapper .calcApp_instructions{
         position: relative;
         font-size:12px; 
         line-height:18px; 
@@ -321,23 +341,23 @@
         margin:15px auto 0px auto;
     }
 
-     #calcApp_mainApp td:nth-child(1){
+     .calcApp_mainWrapper #calcApp_mainApp td:nth-child(1){
         width:15%;
     }
 
-    #calcApp_mainApp td:nth-child(2){
+    .calcApp_mainWrapper #calcApp_mainApp td:nth-child(2){
         width: 45%;
     }
 
-    #calcApp_mainApp td:nth-child(3){
+    .calcApp_mainWrapper #calcApp_mainApp td:nth-child(3){
         width: 30%;
     }
 
-    #calcApp_mainApp td:nth-child(4){
+    .calcApp_mainWrapper #calcApp_mainApp td:nth-child(4){
         width: 10%;
     }
 
-    .calcApp_sectionTitle {
+    .calcApp_mainWrapper .calcApp_sectionTitle {
         background-color:green;
         color:white;
         max-width:80%;
@@ -345,15 +365,15 @@
         margin:15px 10% 0px 10%;
     }
 
-    #calcApp_mainApp tr:nth-child(n){
+    .calcApp_mainWrapper #calcApp_mainApp tr:nth-child(n){
         background-color: rgba(0,0,0,.05);
     }
 
-    #calcApp_mainApp tr:nth-child(2n){
+    .calcApp_mainWrapper #calcApp_mainApp tr:nth-child(2n){
         background-color: rgba(0,0,0,.01);
     }
 
-    .calcApp_deleteButton {
+    .calcApp_mainWrapper .calcApp_deleteButton {
     margin-left:4px;
     margin-right:4px;
     margin-top: 4px; 
@@ -372,7 +392,7 @@
       opacity:.80;
     }
 
-    #calcApp_addExpenseWrap{
+    .calcApp_mainWrapper #calcApp_addExpenseWrap{
         overflow:hidden;
         width: 80%;
         padding:15px;
@@ -380,7 +400,7 @@
         background-color:rgba(150,150,150,.1);
     }
 
-    #calcApp_addExpenseWrap h3{
+    .calcApp_mainWrapper #calcApp_addExpenseWrap h3{
     line-height:36px;
     margin:0px;
     font-weight:200;
@@ -392,7 +412,7 @@
     color:rgba(50,50,50,.6);
     }
 
-    #calcApp_summaryWrapper {
+    .calcApp_mainWrapper #calcApp_summaryWrapper {
         width:100%;
         background-color:#222;
         margin:20px auto;
@@ -402,7 +422,7 @@
         border-bottom-left-radius: 5px;
     }
 
-    #calcApp_summaryWrapper h3{
+    .calcApp_mainWrapper #calcApp_summaryWrapper h3{
     border-bottom:3px solid rgba(255,255,255,.1);
     width:90%;
     margin:10px auto;
@@ -411,11 +431,11 @@
     text-transform: uppercase; 
     }
 
-    #calcApp_mainApp input{
+    .calcApp_mainWrapper #calcApp_mainApp input{
     position:relative;
     }
 
-    .calApp_AddExpenseButton {
+    .calcApp_mainWrapper .calApp_AddExpenseButton {
         background-color:green;
         border:none;
         height:40px;
@@ -432,7 +452,7 @@
         padding:0px 20px;
     }
 
-    .calcApp_calcInsertExpenseField {
+    .calcApp_mainWrapper .calcApp_calcInsertExpenseField {
         position: relative;
         border: 1px solid transparent;
         background-color: transparent;
@@ -449,7 +469,7 @@
         padding: 0px 0px 0px 15px !important;
     }
 
-    .calcApp_inputIcon {
+    .calcApp_mainWrapper .calcApp_inputIcon {
         display: block;
         opacity: 0.5;
         height: 48px;
@@ -464,20 +484,20 @@
         right: 0;
     }
 
-    .calcApp_calcInsertExpenseField:focus{
+    .calcApp_mainWrapper .calcApp_calcInsertExpenseField:focus{
         background-color:rgba(0,255,0,0.1);
         outline:none;
         border: 1px solid transparent;
     }
 
-    .calcApp_calcTitle {
+    .calcApp_mainWrapper .calcApp_calcTitle {
         margin:20px 0px;
         font-size: 32px; 
         line-height: 32px; 
         text-align: center;
     }
 
-    .calcApp_addNewExpenseField{
+    .calcApp_mainWrapper .calcApp_addNewExpenseField{
         text-align:center;
         width:50% !important;
         border-radius:5px;
@@ -488,12 +508,12 @@
         height:40px;
     }
 
-    #calcAppIntroContainer {
+    .calcApp_mainWrapper #calcAppIntroContainer {
         text-align:center;
         min-height:55px;
     }
 
-    .calcApp_typeDescription {
+    .calcApp_mainWrapper .calcApp_typeDescription {
         display: inline-block;
         width: 40%;
         text-align: center;
@@ -501,14 +521,14 @@
         min-height: 60px;
     }
 
-    .calcApp_typeDescriptionText {
+    .calcApp_mainWrapper .calcApp_typeDescriptionText {
         margin:5px;
         padding:0;
         font-size: 12px; 
         line-height: 14px; 
     }
 
-    .calcApp_typeArrow {
+    .calcApp_mainWrapper .calcApp_typeArrow {
         display:inline-block;
         font-size: 20px;
         margin-top: -10px;
@@ -519,11 +539,11 @@
         filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
     }
 
-    .calcApp_descriptionContainer {
+    .calcApp_mainWrapper .calcApp_descriptionContainer {
         text-align:center;
     }
 
-    .calcApp_incomeInputField {
+    .calcApp_mainWrapper .calcApp_incomeInputField {
         border: 3px solid green !important;
         border-radius: 5px;
         font-size: 24px !important;
@@ -538,30 +558,30 @@
         color: #2a462a !important;
     }
 
-    #calcApp_mainApp table:nth-child(1){
+    .calcApp_mainWrapper #calcApp_mainApp table:nth-child(1){
         margin-bottom: 0px !important;
     }
 
 
-    .calcApp_footerWrap {
+    .calcApp_mainWrapper .calcApp_footerWrap {
         margin: 30px auto; 
         padding: 15px;
         width: 90%;
         text-align: center;
     }
 
-    .calcApp_fadeInTransition{
+    .calcApp_mainWrapper .calcApp_fadeInTransition{
         overflow: hidden;
         -webkit-transition: 1s;
         -o-transition: 1s;
         transition: 1s;
     }
 
-    .calcApp_introTitle{
+    .calcApp_mainWrapper .calcApp_introTitle{
     text-align: center;
     }
 
-#calcApp_embedArea{
+.calcApp_mainWrapper #calcApp_embedArea{
     padding: 15px;
     border-radius: 4px;
     max-width:600px;
@@ -570,13 +590,13 @@
     box-sizing:border-box;
 }    
 
-#calcApp_embedArea p{
+.calcApp_mainWrapper #calcApp_embedArea p{
     font-size: 14px; 
     line-height: 16px; 
     text-align:center; 
 }
 
-#calcApp_embedArea h3{
+.calcApp_mainWrapper #calcApp_embedArea h3{
     text-align:center;
      font-size: 26px;
      font-weight: 200;
@@ -584,7 +604,7 @@
      padding: 0;
 }
 
-#calcApp_codeContainer{
+.calcApp_mainWrapper #calcApp_codeContainer{
     margin:auto;
     font-size: 10px;
     line-height: 10px; 
@@ -599,13 +619,13 @@
     color: rgba( 250, 250, 250, 0.5);
 }
 
-.calcApp_calcCodeWrap{
+.calcApp_mainWrapper .calcApp_calcCodeWrap{
     max-width:400px;
     padding:15px;
     margin:auto;
 }
 
-.calcApp_embbedButton{
+.calcApp_mainWrapper .calcApp_embbedButton{
     margin:auto;
     background-color: orange;
     display: block;
@@ -613,7 +633,7 @@
     max-width: 250px; 
 }
 
-.calcApp_embbedButton::selection{
+.calcApp_mainWrapper .calcApp_embbedButton::selection{
     display:none;
 }
 
