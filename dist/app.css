@@ -124,7 +124,7 @@
         -moz-appearance:textfield;
     }
 
-.calcApp_mainWrapper button, li, p, ul, ol, table, tr, td, p, h1, h2, h3, h4, h5, h6, span, div, thead, tbody, input, form, header {
+/*.calcApp_mainWrapper button, li, p, ul, ol, table, tr, td, p, h1, h2, h3, h4, h5, h6, span, div, thead, tbody, input, form, header {
     background-color:initial;
     padding:initial;
     height:initial;
@@ -138,11 +138,7 @@
     border-top:initial;
     font-size:initial;
     line-height: initial;
-}
-
-.calcApp_mainWrapper * {
-    all: unset;
-}
+}*/
 
 .calcApp_mainWrapper .calcApp_expenseIcon {
     color:rgba(0, 128, 0, 0.6);
@@ -519,14 +515,16 @@
         min-height: 60px;
     }
 
-    .calcApp_mainWrapper .calcApp_typeDescriptionText {
+    .calcApp_mainWrapper .calcApp_typeDescriptionText span{
         margin:5px;
         padding:0;
         font-size: 12px; 
         line-height: 14px; 
+        color:#444;
     }
 
     .calcApp_mainWrapper .calcApp_typeArrow {
+        color:#444;
         display:inline-block;
         font-size: 20px;
         margin-top: -10px;
