@@ -3,7 +3,7 @@ $('.calcApp_selectorButton').on('click', function(){
     $('.calcApp_selectorButton').removeClass('_calcApp_selectorButton--active');
     $(this).addClass('_calcApp_selectorButton--active');
     $('#calcApp_mainApp').addClass('calcApp_effect6');
-    $('#calcApp_mainApp').css('background','white');
+    $('#calcApp_mainApp').addClass('calcApp_mainApp--white');
 });
 
 /** @jsx React.DOM */
@@ -57,14 +57,10 @@ var CalcTable = React.createClass({
 
    income = this.props.income;
 
-    var withHoldingsStyle = {
-      maxHeight:'0px'
-    };
+    var withHoldingsStyle = 'calcApp_hideShowWithHoldings--hide '
 
     if (income > 0){
-      withHoldingsStyle = {
-        maxHeight:'1500px'
-      };
+      withHoldingsStyle = 'calcApp_hideShowWithHoldings--show '
     } 
 
     var ExpRows = [];
@@ -82,19 +78,19 @@ var CalcTable = React.createClass({
     });
     return(
     <div className="calcApp_sectionContainer">
-    <div style={this.props.showCalcApp} className="calcApp_fadeInTransition">
+    <div className={'calcApp_fadeInTransition '+this.props.showCalcApp}>
 
     <h3 className="calcApp_sectionTitle">Taxes and Other Monthly Paycheck Withholdings</h3>
-      <p style={this.props.showCalcApp} className="calcApp_instructions calcApp_fadeInTransition"><span className="calcApp_instructionsLabel">Instructions: </span> Adjust the percentages below to estimate your paycheck withholdings</p>
+      <p className={'calcApp_instructions calcApp_fadeInTransition'+this.props.showCalcApp}><span className="calcApp_instructionsLabel">Instructions: </span> Adjust the percentages below to estimate your paycheck withholdings</p>
       <table>
         <tbody>
           {WithHoldRows}
           </tbody>
       </table>
       </div>
-      <div className="calcApp_sectionContainer calcApp_fadeInTransition" style={withHoldingsStyle}>
+      <div className={withHoldingsStyle+"calcApp_sectionContainer calcApp_fadeInTransition"}>
       <h3 className="calcApp_sectionTitle">Monthly Expenses</h3>
-      <p style={this.props.showCalcApp} className="calcApp_instructions calcApp_fadeInTransition"><span className="calcApp_instructionsLabel">Instructions: </span>Enter your monthly expenses below.  Remove an expense by clicking its orange button, or add a new expense with the form</p>
+      <p className={'calcApp_instructions calcApp_fadeInTransition'+this.props.showCalcApp}><span className="calcApp_instructionsLabel">Instructions: </span>Enter your monthly expenses below.  Remove an expense by clicking its orange button, or add a new expense with the form</p>
       <table>
         <tbody>
           {ExpRows}
@@ -201,11 +197,9 @@ currentSum = currentSum - lessWithHoldings;
 currentSum =  numeral(currentSum).format('$0,0');
 
   return(
-    <div id="calcApp_summaryWrapper" className="calcApp_fadeInTransition" style={this.props.showCalcApp}>
-        <div className="table-summary" >
+    <div id="calcApp_summaryWrapper" className={'calcApp_fadeInTransition '+this.props.showCalcApp}>
          <h3>How Much Money Will You Have Left Over?</h3>
         <p id="calcApp_sumedFunds">{currentSum}</p>
-        </div>
     </div>
     );
   }
@@ -240,7 +234,7 @@ var CalcApp = React.createClass({
                 cat1: catOne,
                 cat2: catTwo,
                 income: '',
-                showCalcApp : {maxHeight:'0px', padding: '0px' }
+                showCalcApp : 'calcApp_hideShowSummary--hide '
             }
          },
         onStatusChange: function(mod, iVal) {
@@ -277,11 +271,11 @@ var CalcApp = React.createClass({
         onIncomeInputChange: function(inc){
           if(inc > 0){
           this.setState({
-            showCalcApp : { maxHeight:'1000px' }
+            showCalcApp : 'calcApp_hideShowSummary--show '
           });
           } else {
             this.setState({
-            showCalcApp : {maxHeight:'0px', padding: '0px' }
+            showCalcApp : 'calcApp_hideShowSummary--hide '
           });
           }
           this.setState({
@@ -313,7 +307,7 @@ var CalcApp = React.createClass({
           <h3 className="calcApp_calcTitle">Detailed Rent Calculator</h3>
           <InputIncome/>
           <CalcTable  cat1={this.state.cat1} cat2={this.state.cat2} income={this.state.income} showCalcApp={this.state.showCalcApp}/>
-         <div id="calcApp_addExpenseWrap" className="calcApp_effect6" style={this.state.showCalcApp}>
+         <div id="calcApp_addExpenseWrap" className={'calcApp_effect6 '+this.state.showCalcApp}>
          <h3>Add Another Expense:</h3>
             <AddRowButton cat1={this.state.cat1} ref="addNewItem" onSubmit={this.handleSubmit} showCalcApp={this.state.showCalcApp} />
           </div>
@@ -339,10 +333,10 @@ handleSimpleCalcChange: function(event){
   });
 },
 render: function(){
-    var showSection = {maxHeight: '0px', overflow: 'hidden', minHeight: '0px', padding: '0px'}; 
+    var showSection = 'calcApp_hideShowClass--hide ' 
 
  if( this.state.simpleCalcVal > 0 ){
-    showSection = {maxHeight: '400px'}    
+    showSection = 'calcApp_hideShowClass--show '    
   }
 
   unformatedSimpEst = numeral(this.state.simpleEstimate).format('0');
@@ -351,7 +345,7 @@ render: function(){
     <div className="calcApp_simpleCalcApp">
     <h3 className="calcApp_calcTitle">Simple Rent Calculator</h3>
     <input className="calcApp_incomeInputField" value={this.state.simpleCalcVal} placeholder={'Enter Your Annual Income'} onChange={this.handleSimpleCalcChange}/>
-    <div className="simpleCalc_moneyleft calcApp_fadeInTransition" style={showSection}><h3>Your Maximum Recommended Rent is:</h3><p className="simpleCalc_output">{this.state.simpleEstimate}</p>
+    <div className={showSection+'simpleCalc_moneyleft calcApp_fadeInTransition'}><h3>Your Maximum Recommended Rent is:</h3><p className="simpleCalc_output">{this.state.simpleEstimate}</p>
         <p className="calcApp_summaryText">Your maximum suggested rent is {this.state.simpleEstimate} and you will have ${numeral(this.state.simpleCalcVal/12-unformatedSimpEst).format('0,0')} left over before taxes and other deductions</p>
     </div>
   </div>

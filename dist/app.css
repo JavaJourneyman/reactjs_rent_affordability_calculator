@@ -1,3 +1,436 @@
+
+/*!
+* CleanSlate
+*   github.com/premasagar/cleanslate
+*
+*//*
+    An extreme CSS reset stylesheet, for normalising the styling of a container element and its children.
+
+    by Premasagar Rose
+        dharmafly.com
+
+    license
+        opensource.org/licenses/mit-license.php
+
+    **
+        
+    v0.9.3
+        
+*/
+
+/* == BLANKET RESET RULES == */
+
+/* HTML 4.01 */
+.cleanslate, .cleanslate h1, .cleanslate h2, .cleanslate h3, .cleanslate h4, .cleanslate h5, .cleanslate h6, .cleanslate p, .cleanslate td, .cleanslate dl, .cleanslate tr, .cleanslate dt, .cleanslate ol, .cleanslate form, .cleanslate select, .cleanslate option, .cleanslate pre, .cleanslate div, .cleanslate table,  .cleanslate th, .cleanslate tbody, .cleanslate tfoot, .cleanslate caption, .cleanslate thead, .cleanslate ul, .cleanslate li, .cleanslate address, .cleanslate blockquote, .cleanslate dd, .cleanslate fieldset, .cleanslate li, .cleanslate iframe, .cleanslate strong, .cleanslate legend, .cleanslate em, .cleanslate summary, .cleanslate cite, .cleanslate span, .cleanslate input, .cleanslate sup, .cleanslate label, .cleanslate dfn, .cleanslate object, .cleanslate big, .cleanslate q, .cleanslate samp, .cleanslate acronym, .cleanslate small, .cleanslate img, .cleanslate strike, .cleanslate code, .cleanslate sub, .cleanslate ins, .cleanslate textarea, .cleanslate button, .cleanslate var, .cleanslate a, .cleanslate abbr, .cleanslate applet, .cleanslate del, .cleanslate kbd, .cleanslate tt, .cleanslate b, .cleanslate i, .cleanslate hr,
+
+/* HTML5 - Sept 2013 taken from MDN https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/HTML5_element_list */
+.cleanslate article, .cleanslate aside, .cleanslate figure, .cleanslate figcaption, .cleanslate footer, .cleanslate header, .cleanslate menu, .cleanslate nav, .cleanslate section, .cleanslate time, .cleanslate mark, .cleanslate audio, .cleanslate video, .cleanslate abbr, .cleanslate address, .cleanslate area, .cleanslate blockquote, .cleanslate canvas, .cleanslate caption, .cleanslate cite, .cleanslate code, .cleanslate colgroup, .cleanslate col, .cleanslate datalist, .cleanslate fieldset, .cleanslate main, .cleanslate map, .cleanslate meta, .cleanslate optgroup, .cleanslate output, .cleanslate progress {
+    background-attachment:scroll !important;
+    background-color:transparent !important;
+    background-image:none !important; /* This rule affects the use of pngfix JavaScript http://dillerdesign.com/experiment/DD_BelatedPNG for IE6, which is used to force the browser to recognise alpha-transparent PNGs files that replace the IE6 lack of PNG transparency. (The rule overrides the VML image that is used to replace the given CSS background-image). If you don't know what that means, then you probably haven't used the pngfix script, and this comment may be ignored :) */
+    background-position:0 0 !important;
+    background-repeat:repeat !important;
+    border-color:black !important;
+    border-color:currentColor !important; /* `border-color` should match font color. Modern browsers (incl. IE9) allow the use of "currentColor" to match the current font 'color' value <http://www.w3.org/TR/css3-color/#currentcolor>. For older browsers, a default of 'black' is given before this rule. Guideline to support older browsers: if you haven't already declared a border-color for an element, be sure to do so, e.g. when you first declare the border-width. */
+    border-radius:0 !important;
+    border-style:none !important;
+    border-width:medium !important;
+    bottom:auto !important;
+    clear:none !important;
+    clip:auto !important;
+    color:inherit !important;
+    counter-increment:none !important;
+    counter-reset:none !important;
+    cursor:auto !important;
+    direction:inherit !important;
+    display:inline !important;
+    float:none !important;
+    font-family: inherit !important; /* As with other inherit values, this needs to be set on the root container element */
+    font-size: inherit !important;
+    font-style:inherit !important;
+    font-variant:normal !important;
+    font-weight:inherit !important;
+    height:auto !important;
+    left:auto !important;
+    letter-spacing:normal !important;
+    line-height:inherit !important;
+    list-style-type: inherit !important; /* Could set list-style-type to none */
+    list-style-position: outside !important;
+    list-style-image: none !important;
+    margin:0 !important;
+    max-height:none !important;
+    max-width:none !important;
+    min-height:0 !important;
+    min-width:0 !important;
+    opacity:1;
+    outline:invert none medium !important;
+    overflow:visible !important;
+    padding:0 !important;
+    position:static !important;
+    quotes: "" "" !important;
+    right:auto !important;
+    table-layout:auto !important;
+    text-align:inherit !important;
+    text-decoration:inherit !important;
+    text-indent:0 !important;
+    text-transform:none !important;
+    top:auto !important;
+    unicode-bidi:normal !important;
+    vertical-align:baseline !important;
+    visibility:inherit !important;
+    white-space:normal !important;
+    width:auto !important;
+    word-spacing:normal !important;
+    z-index:auto !important;
+    
+    /* CSS3 */
+    /* Including all prefixes according to http://caniuse.com/ */
+    /* CSS Animations don't cascade, so don't require resetting */
+    background-origin: padding-box !important;
+    background-clip: border-box !important;
+    background-size: auto !important;
+    -webkit-border-image: none !important;
+         -o-border-image: none !important;
+            border-image: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    box-sizing: content-box !important;
+    -webkit-column-count: auto !important;
+       -moz-column-count: auto !important;
+            column-count: auto !important;
+    -webkit-column-gap: normal !important;
+       -moz-column-gap: normal !important;
+            column-gap: normal !important;
+    -webkit-column-rule: medium none black !important;
+       -moz-column-rule: medium none black !important;
+            column-rule: medium none black !important;
+    -webkit-column-span: 1 !important;
+       -moz-column-span: 1 !important; /* doesn't exist yet but probably will */
+            column-span: 1 !important;
+    -webkit-column-width: auto !important;
+       -moz-column-width: auto !important;
+            column-width: auto !important;
+    -webkit-font-feature-settings: normal !important;
+            font-feature-settings: normal !important;
+    overflow-x: visible !important;
+    overflow-y: visible !important;
+    -webkit-hyphens: manual !important;
+       -moz-hyphens: manual !important;
+            -ms-hyphens: manual !important;
+        hyphens: manual !important;
+    -webkit-perspective: none !important;
+        -ms-perspective: none !important;
+         -o-perspective: none !important;
+            perspective: none !important;
+    -webkit-perspective-origin: 50% 50% !important;
+        -ms-perspective-origin: 50% 50% !important;
+         -o-perspective-origin: 50% 50% !important;
+            perspective-origin: 50% 50% !important;
+    -webkit-backface-visibility: visible !important;
+        -ms-backface-visibility: visible !important;
+         -o-backface-visibility: visible !important;
+            backface-visibility: visible !important;
+    text-shadow: none !important;
+    -webkit-transition: all 0s ease 0s !important;
+            transition: all 0s ease 0s !important;
+    -webkit-transform: none !important;
+        -ms-transform: none !important;
+            transform: none !important;
+    -webkit-transform-origin: 50% 50% !important;
+        -ms-transform-origin: 50% 50% !important;
+            transform-origin: 50% 50% !important;
+    -webkit-transform-style: flat !important;
+        -ms-transform-style: flat !important;
+         -o-transform-style: flat !important;
+            transform-style: flat !important;
+    word-break: normal !important;
+}
+
+/* == BLOCK-LEVEL == */
+/* Actually, some of these should be inline-block and other values, but block works fine (TODO: rigorously verify this) */
+/* HTML 4.01 */
+.cleanslate, .cleanslate h3, .cleanslate h5, .cleanslate p, .cleanslate h1, .cleanslate dl, .cleanslate dt, .cleanslate h6, .cleanslate ol, .cleanslate form, .cleanslate option, .cleanslate pre, .cleanslate div, .cleanslate h2, .cleanslate caption, .cleanslate h4, .cleanslate ul, .cleanslate address, .cleanslate blockquote, .cleanslate dd, .cleanslate fieldset, .cleanslate hr,
+
+/* HTML5 new elements */
+.cleanslate article, .cleanslate dialog, .cleanslate figure, .cleanslate footer, .cleanslate header, .cleanslate hgroup, .cleanslate menu, .cleanslate nav, .cleanslate section, .cleanslate audio, .cleanslate video, .cleanslate address, .cleanslate blockquote, .cleanslate colgroup, .cleanslate main, .cleanslate progress, .cleanslate summary {
+    display:block !important; 
+}
+.cleanslate h1, .cleanslate h2, .cleanslate h3, .cleanslate h4, .cleanslate h5, .cleanslate h6 {
+    font-weight: bold !important;
+}
+.cleanslate h1 {
+    font-size: 2em !important;
+    padding: .67em 0 !important;
+}
+.cleanslate h2 {
+    font-size: 1.5em !important;
+    padding: .83em 0 !important;
+}
+.cleanslate h3 {
+    font-size: 1.17em !important;
+    padding: .83em 0 !important;
+}
+.cleanslate h4 {
+    font-size: 1em !important;
+}
+.cleanslate h5 {
+    font-size: .83em !important;
+}
+.cleanslate p {
+    margin: 1em 0 !important;
+}
+.cleanslate table {
+    display: table !important;
+}
+.cleanslate thead {
+    display: table-header-group !important;
+}
+.cleanslate tbody {
+    display: table-row-group !important;
+}
+.cleanslate tfoot {
+    display: table-footer-group !important;
+}
+.cleanslate tr {
+    display: table-row !important;
+}
+.cleanslate th, .cleanslate td {
+    display: table-cell !important;
+    padding: 2px !important;
+}
+
+/* == SPECIFIC ELEMENTS == */
+/* Some of these are browser defaults; some are just useful resets */
+.cleanslate ol, .cleanslate ul {
+    margin: 1em 0 !important;
+}
+.cleanslate ul li, .cleanslate ul ul li, .cleanslate ul ul ul li, .cleanslate ol li, .cleanslate ol ol li, .cleanslate ol ol ol li, .cleanslate ul ol ol li, .cleanslate ul ul ol li, .cleanslate ol ul ul li, .cleanslate ol ol ul li {
+    list-style-position: inside !important;
+    margin-top: .08em !important;
+}
+.cleanslate ol ol, .cleanslate ol ol ol, .cleanslate ul ul, .cleanslate ul ul ul, .cleanslate ol ul, .cleanslate ol ul ul, .cleanslate ol ol ul, .cleanslate ul ol, .cleanslate ul ol ol, .cleanslate ul ul ol {
+    padding-left: 40px !important;
+    margin: 0 !important;
+}
+/* helper for general navigation */
+.cleanslate nav ul, .cleanslate nav ol {
+    list-style-type:none !important;
+
+}
+.cleanslate ul, .cleanslate menu {
+    list-style-type:disc !important;
+}
+.cleanslate ol {
+    list-style-type:decimal !important;
+}
+.cleanslate ol ul, .cleanslate ul ul, .cleanslate menu ul, .cleanslate ol menu, .cleanslate ul menu, .cleanslate menu menu {
+    list-style-type:circle !important;
+}
+.cleanslate ol ol ul, .cleanslate ol ul ul, .cleanslate ol menu ul, .cleanslate ol ol menu, .cleanslate ol ul menu, .cleanslate ol menu menu, .cleanslate ul ol ul, .cleanslate ul ul ul, .cleanslate ul menu ul, .cleanslate ul ol menu, .cleanslate ul ul menu, .cleanslate ul menu menu, .cleanslate menu ol ul, .cleanslate menu ul ul, .cleanslate menu menu ul, .cleanslate menu ol menu, .cleanslate menu ul menu, .cleanslate menu menu menu {
+    list-style-type:square !important;
+}
+.cleanslate li {    
+    display:list-item !important;
+    /* Fixes IE7 issue with positioning of nested bullets */
+    min-height:auto !important;
+    min-width:auto !important;
+    padding-left: 20px !important; /* replace -webkit-padding-start: 40px; */
+}
+.cleanslate strong {
+    font-weight:bold !important;
+}
+.cleanslate em {
+    font-style:italic !important;
+}
+.cleanslate kbd, .cleanslate samp, .cleanslate code, .cleanslate pre {
+  font-family:monospace !important;
+}
+.cleanslate a {
+    color: blue !important;
+    text-decoration: underline !important;
+}
+.cleanslate a:visited {
+    color: #529 !important;
+}
+.cleanslate a, .cleanslate a *, .cleanslate input[type=submit], .cleanslate input[type=radio], .cleanslate input[type=checkbox], .cleanslate select {
+    cursor:pointer !important;
+}
+.cleanslate button, .cleanslate input[type=submit] {
+    text-align: center !important;
+    padding: 2px 6px 3px !important;
+    border-radius: 4px !important;
+    text-decoration: none !important;
+    font-family: arial, helvetica, sans-serif !important;
+    font-size: small !important;
+    background: white !important;
+    -webkit-appearance: push-button !important;
+    color: buttontext !important;
+    border: 1px #a6a6a6 solid !important;
+    background: lightgrey !important; /* Old browsers */
+    background: rgb(255,255,255); /* Old browsers */ /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(221,221,221,1)), color-stop(100%,rgba(209,209,209,1)), color-stop(100%,rgba(221,221,221,1))) !important; /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(221,221,221,1) 100%,rgba(209,209,209,1) 100%,rgba(221,221,221,1) 100%) !important; /* Chrome10+,Safari5.1+ */ /* Opera 11.10+ */ /* IE10+ */
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(221,221,221,1) 100%, rgba(209,209,209,1) 100%, rgba(221,221,221,1) 100%) !important;
+    background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(221,221,221,1) 100%,rgba(209,209,209,1) 100%,rgba(221,221,221,1) 100%) !important; /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#dddddd',GradientType=0 ) !important; /* IE6-9 */
+    -o-box-shadow: 1px 1px 0px #eee !important;
+       box-shadow: 1px 1px 0px #eee !important;
+    outline: initial !important;
+}
+.cleanslate button {
+    padding: 1px 6px 2px 6px !important;
+    margin-right: 5px !important;
+}
+.cleanslate input[type=hidden] {
+    display:none !important;
+}
+/* restore form defaults */
+.cleanslate textarea {
+    -webkit-appearance: textarea !important;
+    background: white !important;
+    padding: 2px !important;
+    margin-left: 4px !important;
+    word-wrap: break-word !important;
+    white-space: pre-wrap !important;
+    font-size: 11px !important;
+    font-family: arial, helvetica, sans-serif !important;
+    line-height: 13px !important;
+    resize: both !important;
+}
+.cleanslate select, .cleanslate textarea, .cleanslate input {
+    border:1px solid #ccc !important;
+}
+.cleanslate select {
+    font-size: 11px !important;
+    font-family: helvetica, arial, sans-serif !important;
+    display: inline-block;
+}
+.cleanslate textarea:focus, .cleanslate input:focus {
+    outline: auto 5px -webkit-focus-ring-color !important;
+    outline: initial !important;
+}
+.cleanslate input[type=text] {
+    background: white !important;
+    padding: 1px !important;
+    font-family: initial !important;
+    font-size: small !important;
+}
+.cleanslate input[type=checkbox], .cleanslate input[type=radio] {
+    border: 1px #2b2b2b solid !important;
+    border-radius: 4px !important;
+}
+.cleanslate input[type=checkbox], .cleanslate input[type=radio] {
+    outline: intial !important;
+}
+.cleanslate input[type=radio] {
+    margin: 2px 2px 3px 2px !important;
+}
+.cleanslate input[type=submit]:active, .cleanslate button:active {
+    background: rgb(59,103,158) !important; /* Old browsers */ /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(59,103,158,1)), color-stop(50%,rgba(43,136,217,1)), color-stop(51%,rgba(32,124,202,1)), color-stop(100%,rgba(125,185,232,1))) !important; /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(59,103,158,1) 0%,rgba(43,136,217,1) 50%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%) !important; /* Chrome10+,Safari5.1+ */ /* Opera 11.10+ */ /* IE10+ */
+    background: -webkit-linear-gradient(top, rgba(59,103,158,1) 0%, rgba(43,136,217,1) 50%, rgba(32,124,202,1) 51%, rgba(125,185,232,1) 100%) !important;
+    background: linear-gradient(to bottom, rgba(59,103,158,1) 0%,rgba(43,136,217,1) 50%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%) !important; /* W3C */
+    border-color: #5259b0 !important;
+}
+.cleanslate abbr[title], .cleanslate acronym[title], .cleanslate dfn[title] {
+    cursor:help !important;
+    border-bottom-width:1px !important;
+    border-bottom-style:dotted !important;
+}
+.cleanslate ins {
+    background-color:#ff9 !important;
+    color:black !important;
+}
+.cleanslate del {
+    text-decoration: line-through !important;
+}
+.cleanslate blockquote, .cleanslate q  {
+    quotes:none !important; /* HTML5 */
+}
+.cleanslate blockquote:before, .cleanslate blockquote:after, .cleanslate q:before, .cleanslate q:after, .cleanslate li:before, .cleanslate li:after  {
+    content:"" !important;
+}
+.cleanslate input, .cleanslate select {
+    vertical-align:middle !important;
+}
+
+.cleanslate table {
+    border-collapse:collapse !important;
+    border-spacing:0 !important;
+}
+.cleanslate hr {
+    display:block !important;
+    height:1px !important;
+    border:0 !important;
+    border-top:1px solid #ccc !important;
+    margin:1em 0 !important;
+}
+.cleanslate *[dir=rtl] {
+    direction: rtl !important;
+}
+.cleanslate mark {
+    background-color:#ff9 !important;
+    color:black !important;
+    font-style:italic !important;
+    font-weight:bold !important;
+}
+.cleanslate menu {
+    padding-left: 40px !important;
+    padding-top: 8px !important;
+}
+
+/* additional helpers */
+.cleanslate [hidden],
+.cleanslate template {
+    display: none !important;
+}
+.cleanslate abbr[title] {
+    border-bottom: 1px dotted !important;
+}
+.cleanslate sub, .cleanslate sup {
+    font-size: 75% !important;
+    line-height: 0 !important;
+    position: relative !important;
+    vertical-align: baseline !important;
+}
+.cleanslate sup {
+    top: -0.5em !important;
+}
+.cleanslate sub {
+    bottom: -0.25em !important;
+}
+.cleanslate img {
+    border: 0 !important;
+}
+.cleanslate figure {
+    margin: 0 !important;
+}
+.cleanslate textarea {
+    overflow: auto !important;
+    vertical-align: top !important;
+}
+
+/* == ROOT CONTAINER ELEMENT == */
+/* This contains default values for child elements to inherit  */
+.cleanslate {
+    font-size: medium !important;
+    line-height: 1 !important;
+    direction:ltr !important;
+    text-align: left !important; /* for IE, Opera */
+    text-align: start !important; /* recommended W3C Spec */
+    font-family: "Times New Roman", Times, serif !important; /* Override this with whatever font-family is required */
+    color: black !important;
+    font-style:normal !important;
+    font-weight:normal !important;
+    text-decoration:none !important;
+    list-style-type:disc !important;
+}
+
+.cleanslate pre {
+    white-space:pre !important;
+}
+
 /* base.css overrides */
 
 @font-face {
@@ -7,288 +440,291 @@
     url("../build/assets/icons/flaticon.woff") format("woff"),
     url("../build/assets/icons/flaticon.ttf") format("truetype"),
     url("../build/assets/icons/flaticon.svg") format("svg");
-    font-weight: normal;
-    font-style: normal;
 }
 [class^="calcAppFont-"]:before, [class*="calcAppFont-"]:before,
 [class^="calcAppFont-"]:after, [class*="calcAppFont-"]:after {   
-    font-family: calcAppFont;
+    font-family: calcAppFont !important;
 }
 
 .calcAppFont-cellphone96:before {
-    content: "\e000";
+    content: "\e000" !important;
 }
 .calcAppFont-clocks18:before {
-    content: "\e001";
+    content: "\e001" !important;
 }
 .calcAppFont-coin18:before {
-    content: "\e002";
+    content: "\e002" !important;
 }
 .calcAppFont-disco:before {
-    content: "\e003";
+    content: "\e003" !important;
 }
 .calcAppFont-dollar-symbol1:before {
-    content: "\e004";
+    content: "\e004" !important;
 }
 .calcAppFont-dollar182:before {
-    content: "\e005";
+    content: "\e005" !important;
 }
 .calcAppFont-downarrows11:before {
-    content: "\e006";
+    content: "\e006" !important;
 }
 .calcAppFont-hanger22:before {
-    content: "\e007";
+    content: "\e007" !important;
 }
 .calcAppFont-hospital32:before {
-    content: "\e008";
+    content: "\e008" !important;
 }
 .calcAppFont-keyboard53:before {
-    content: "\e009";
+    content: "\e009" !important;
 }
 .calcAppFont-laptopcomputer8:before {
-    content: "\e00a";
+    content: "\e00a" !important;
 }
 .calcAppFont-leftarrows6:before {
-    content: "\e00b";
+    content: "\e00b" !important;
 }
 .calcAppFont-login12:before {
-    content: "\e00c";
+    content: "\e00c" !important;
 }
 .calcAppFont-magnifying-glass23:before {
-    content: "\e00d";
+    content: "\e00d" !important;
 }
 .calcAppFont-minussign5:before {
-    content: "\e00e";
+    content: "\e00e" !important;
 }
 .calcAppFont-money132:before {
-    content: "\e00f";
+    content: "\e00f" !important;
 }
 .calcAppFont-money360:before {
-    content: "\e010";
+    content: "\e010" !important;
 }
 .calcAppFont-money425:before {
-    content: "\e011";
+    content: "\e011" !important;
 }
 .calcAppFont-multimediaoption16:before {
-    content: "\e012";
+    content: "\e012" !important;
 }
 .calcAppFont-plate7:before {
-    content: "\e013";
+    content: "\e013" !important;
 }
 .calcAppFont-poor:before {
-    content: "\e014";
+    content: "\e014" !important;
 }
 .calcAppFont-realestate2:before {
-    content: "\e015";
+    content: "\e015" !important;
 }
 .calcAppFont-rent4:before {
-    content: "\e016";
+    content: "\e016" !important;
 }
 .calcAppFont-rightarrows6:before {
-    content: "\e017";
+    content: "\e017" !important;
 }
 .calcAppFont-rolling:before {
-    content: "\e018";
+    content: "\e018" !important;
 }
 .calcAppFont-video189:before {
-    content: "\e019";
+    content: "\e019" !important;
 }
 .calcAppFont-weightlifter3:before {
-    content: "\e01a";
+    content: "\e01a" !important;
 }
 .calcAppFont-wrong:before {
-    content: "\e01b";
+    content: "\e01b" !important;
 }
 
 .calcApp_mainWrapper {
-        max-width: 750px;
-        margin: 45px auto;
-        box-sizing: border-box;
-        font-family: 'PT Sans', sans-serif;
+        max-width: 750px !important;
+        margin: 45px auto !important;
+        box-sizing: border-box !important;
+        font-family: 'PT Sans', sans-serif !important;
+    }
+
+    .calcApp_mainWrapper div{
+        box-sizing: border-box !important;
     }
 
     .calcApp_mainWrapper input::-webkit-outer-spin-button,
         input::-webkit-inner-spin-button {
-            /* display: none; <- Crashes Chrome on hover */
-            -webkit-appearance: none;
-            margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+            /* display: none !important; <- Crashes Chrome on hover */
+            -webkit-appearance: none !important;
+            margin: 0 !important; /* <-- Apparently some margin are still there even though it's hidden */
     }
 
     .calcApp_mainWrapper input[type=number]::-webkit-outer-spin-button,
         input[type=number]::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
+            -webkit-appearance: none !important;
+            margin: 0 !important;
     }
 
     .calcApp_mainWrapper input[type=number] {
-        -moz-appearance:textfield;
+        -moz-appearance:textfield !important;
     }
 
-/*.calcApp_mainWrapper button, li, p, ul, ol, table, tr, td, p, h1, h2, h3, h4, h5, h6, span, div, thead, tbody, input, form, header {
-    background-color:initial;
-    padding:initial;
-    height:initial;
-    width:initial;
-    min-height:initial;
-    min-width:initial; 
-    color: initial;
-    border-left:initial;
-    border-right:initial;
-    border-bottom:initial;
-    border-top:initial;
-    font-size:initial;
-    line-height: initial;
-}*/
-
 .calcApp_mainWrapper .calcApp_expenseIcon {
-    color:rgba(0, 128, 0, 0.6);
-    font-size:35px;
-    line-height:30px;
+    color:rgba(0, 128, 0, 0.6) !important;
+    font-size:35px !important;
+    line-height:30px !important;
 }
 
 .calcApp_mainWrapper .calcApp_simpleCalcApp{
-        border-radius:5px;
-        max-width:600px;
-        padding:0px 0px;
-        margin:0px auto;
-        text-align:center;
+        border-radius:5px !important;
+        max-width:600px !important;
+        padding:0px 0px !important;
+        margin:0px auto !important;
+        text-align:center !important;
     }
 
     .calcApp_mainWrapper .calcApp_selectorButton {
-          -webkit-user-select: none;
-             -moz-user-select: none;
-              -ms-user-select: none;
-                  user-select: none;
-          border-radius: 5px;
-          font-size: 18px;
-          display: inline-block;
-          background-color: #e5e5e5;
-          padding: 20px 30px;
-          margin: 15px 0px;
-          color: #444;
-          cursor: pointer;
-          box-shadow: 1px 2px 5px rgba(0,0,0, .5);
-          -webkit-transform: scale(.99);
-              -ms-transform: scale(.99);
-                  transform: scale(.99);
-          -webkit-transition: -webkit-transform .1s, box-shadow .2s, background-color .5s;
-                  transition: transform .1s, box-shadow .2s, background-color .5s;
+          -webkit-user-select: none !important;
+             -moz-user-select: none !important;
+              -ms-user-select: none !important;
+                  user-select: none !important;
+          border-radius: 5px !important;
+          font-size: 18px !important;
+          display: inline-block !important;
+          background-color: #e5e5e5 !important;
+          padding: 20px 30px !important;
+          margin: 15px 0px !important;
+          color: #444 !important;
+          cursor: pointer !important;
+          box-shadow: 1px 2px 5px rgba(0,0,0, .5) !important;
+          -webkit-transform: scale(.99) !important;
+              -ms-transform: scale(.99) !important;
+                  transform: scale(.99) !important;
+          -webkit-transition: -webkit-transform .1s, box-shadow .2s, background-color .5s !important;
+                  transition: transform .1s, box-shadow .2s, background-color .5s !important;
+        
+    }
+
+    .calcApp_mainWrapper button {
+          background-image:none !important; 
+    }
+
+    .calcApp_mainWrapper button:active {
+          background-image:none !important; 
     }
 
     .calcApp_mainWrapper .calcApp_selectorButton:hover {
-            -webkit-transform: scale(1);
-                -ms-transform: scale(1);
-                    transform: scale(1);
-            box-shadow: 1px 5px 8px rgba(0,0,0, .5);
+            -webkit-transform: scale(1) !important;
+                -ms-transform: scale(1) !important;
+                    transform: scale(1) !important;
+            box-shadow: 1px 5px 8px rgba(0,0,0, .5) !important;
     }
 
     .calcApp_mainWrapper .calcApp_selectorButton:active {
-        -webkit-transform: scale(.98);
-            -ms-transform: scale(.98);
-                transform: scale(.98);
+        -webkit-transform: scale(.98) !important;
+            -ms-transform: scale(.98) !important;
+                transform: scale(.98) !important;
     }
 
     .calcApp_mainWrapper ._calcApp_selectorButton--active{
-      background-color: #ffa210;
-      color: #fff;
+      background-color: #ffa210 !important;
+      color: #fff !important;
     }
 
     .calcApp_mainWrapper .calcApp_selectorButton:focus{  
-         outline: 0;
+         outline: 0 !important;
        }
 
     .calcApp_mainWrapper .calcApp_instructionsLabel{
-        color:green;
-        font-weight:bold;
+        color:green !important;
+        font-weight:bold !important;
+    }
+
+    .calcApp_mainWrapper .calcApp_instructionsFont{
+        color:#444 !important;
     }
 
     .calcApp_mainWrapper .calcApp_summaryText{
-        color:white;
-        margin:0px auto;
-        max-width:300px;
-        font-size: 14px;
-        line-height: 16px;
+        color:white !important;
+        margin:0px auto !important;
+        max-width:300px !important;
+        font-size: 14px !important;
+        line-height: 16px !important;
     }
 
-    .calcApp_mainWrapper .calcApp_simpleCalcApp p, span{
-    color:white;
+    .calcApp_mainWrapper .calcApp_simpleCalcApp p, .calcApp_mainWrapper .calcApp_simpleCalcApp span{
+    color:white !important;
     }
 
     .calcApp_mainWrapper .simpleCalc_output {
-        display:inline-block;
-        max-width:350px;
-        width:96%;
-        margin: 10px auto;
-        color:white;
-        font-size:24px;
-        font-size:36px;
-        text-align:center;
+        display:inline-block !important;
+        max-width:350px !important;
+        width:96% !important;
+        margin: 10px auto !important;
+        color:white !important;
+        font-size:24px !important;
+        font-size:36px !important;
+        text-align:center !important;
         color: white !important; 
     }
 
     .calcApp_mainWrapper .simpleCalc_moneyleft {
-        min-height: 200px;
-        margin-top: 20px;
+        min-height: 200px !important;
+        margin-top: 20px !important;
         background-color:#222 !important;
-        clear:both;
-        padding:15px;
-        border-bottom-left-radius: 5px;
-        border-bottom-right-radius: 5px; 
+        clear:both !important;
+        padding:15px !important;
+        border-bottom-left-radius: 5px !important;
+        border-bottom-right-radius: 5px !important; 
     }
 
     .calcApp_mainWrapper .simpleCalc_moneyleft h3 {
-        border-bottom:3px solid rgba(255,255,255,.1);
-        width:90%;
-        margin:10px auto;
-        color:white;   
-        font-weight:200;
-        text-transform: uppercase; 
+        border-bottom:3px solid rgba(255,255,255,.1) !important;
+        width:90% !important;
+        margin:10px auto !important;
+        color:white !important;   
+        font-weight:200 !important;
+        text-transform: uppercase !important; 
     }
 
     .calcApp_mainWrapper #calcApp_sumedFunds {
-        display:inline-block;
-        max-width:350px;
-        width:96%;
-        margin: 10px auto;
-        color:white;
-        font-size:24px;
-        font-size:36px;
-        text-align:center;
+        display:inline-block !important;
+        max-width:350px !important;
+        width:96% !important;
+        margin: 10px auto !important;
+        color:white !important;
+        font-size:24px !important;
+        font-size:36px !important;
+        text-align:center !important;
     }
 
     .calcApp_mainWrapper #calcApp_mainApp {
-        padding: 5px 0 0 0;
-        border-radius: 5px;
-        max-width: 600px;
-        width: 96%;
-        margin: 0px auto 15px auto;
-        text-align: center;
+        padding: 5px 0 0 0 !important;
+        border-radius: 5px !important;
+        max-width: 600px !important;
+        width: 96% !important;
+        margin: 0px auto 15px auto !important;
+        text-align: center !important;
+    }
+
+    .calcApp_mainWrapper .calcApp_mainApp--white {
+        background-color:white !important; 
     }
 
     .calcApp_mainWrapper .calcApp_effect6
     {
-        position:relative;
-        box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+        position:relative !important;
+        box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset !important;
     }
 
     .calcApp_mainWrapper .calcApp_effect6:before, .calcApp_effect6:after
     {
-        content:"";
-        position:absolute; 
-        z-index:-1;
-        box-shadow:0 0 20px rgba(0,0,0,0.8);
-        bottom:0;
-        left:10px;
-        right:10px;
-        border-radius:100px / 10px;
+        content:"" !important;
+        position:absolute !important; 
+        z-index:-1 !important;
+        box-shadow:0 0 20px rgba(0,0,0,0.8) !important;
+        bottom:0 !important;
+        left:10px !important;
+        right:10px !important;
+        border-radius:100px / 10px !important;
     }
 
     .calcApp_mainWrapper #calcApp_mainApp table{
-        border-collapse:collapse;
-        display:inline-block;
-        max-width:550px;
-        width:85%;
-        margin:10px auto;
+        border-collapse:collapse !important;
+        display:inline-block !important;
+        max-width:550px !important;
+        width:85% !important;
+        margin:10px auto !important;
         font-size:18px !important;
         line-height:35px !important;
     }
@@ -298,258 +734,262 @@
     }
 
     .calcApp_mainWrapper #calcApp_mainApp td{
-    position:relative;
+    position:relative !important;
     border:0px !important;
     }
 
     .calcApp_mainWrapper #calcApp_mainApp tr:hover .inputIcon{
-        opacity:1;
+        opacity:1 !important;
     }
 
     .calcApp_mainWrapper #calcApp_mainApp tr:hover{
-    background-color:rgba(0,0,0,.1);
+    background-color:rgba(0,0,0,.1) !important;
     }
     
     .calcApp_mainWrapper #calcApp_mainApp tr input{
     border:2px solid transparent !important;
-    box-sizing: border-box;
+    box-sizing: border-box !important;
     }
         
     .calcApp_mainWrapper #calcApp_mainApp tr:hover input{
     border:2px solid green !important;
-    box-sizing: border-box;
+    box-sizing: border-box !important;
     }
     
     .calcApp_mainWrapper .calcApp_expenseNameField {
-        text-align: left;
-        color: green;
-        font-size: 18px;
-        line-height: 18px;
-        font-weight: 200;
+        text-align: left !important;
+        color: green !important;
+        font-size: 18px !important;
+        line-height: 18px !important;
+        font-weight: 200 !important;
     }
 
     .calcApp_mainWrapper .calcApp_instructions{
-        position: relative;
-        font-size:12px; 
-        line-height:18px; 
-        max-width:350px;
-        margin:15px auto 0px auto;
+        position: relative !important;
+        font-size:12px !important; 
+        color: #444 !important;
+        line-height:18px !important; 
+        max-width:350px !important;
+        margin:15px auto 0px auto !important;
+    }
+
+    .calcApp_mainWrapper .calcApp_instructions span {
+        color: #444 !important;
     }
 
      .calcApp_mainWrapper #calcApp_mainApp td:nth-child(1){
-        width:15%;
+        width:15% !important;
     }
 
     .calcApp_mainWrapper #calcApp_mainApp td:nth-child(2){
-        width: 45%;
+        width: 45% !important;
     }
 
     .calcApp_mainWrapper #calcApp_mainApp td:nth-child(3){
-        width: 30%;
+        width: 30% !important;
     }
 
     .calcApp_mainWrapper #calcApp_mainApp td:nth-child(4){
-        width: 10%;
+        width: 10% !important;
     }
 
     .calcApp_mainWrapper .calcApp_sectionTitle {
-        background-color:green;
-        color:white;
-        max-width:80%;
-        padding:5px 5px;
-        margin:15px 10% 0px 10%;
+        background-color:green !important;
+        color:white !important;
+        max-width:80% !important;
+        padding:5px 5px !important;
+        margin:15px 10% 0px 10% !important;
     }
 
     .calcApp_mainWrapper #calcApp_mainApp tr:nth-child(n){
-        background-color: rgba(0,0,0,.05);
+        background-color: rgba(0,0,0,.05) !important;
     }
 
     .calcApp_mainWrapper #calcApp_mainApp tr:nth-child(2n){
-        background-color: rgba(0,0,0,.01);
+        background-color: rgba(0,0,0,.01) !important;
     }
 
     .calcApp_mainWrapper .calcApp_deleteButton {
-    margin-left:4px;
-    margin-right:4px;
-    margin-top: 4px; 
-      background-color:inherit;
-      border:none;  
-      position:relative;
-      z-index:10px;
-      border-radius: 50%;
+    margin-left:4px !important;
+    margin-right:4px !important;
+    margin-top: 4px !important; 
+      background-color:inherit !important;
+      border:none !important;  
+      position:relative !important;
+      z-index:10px !important;
+      border-radius: 50% !important;
       padding: 0px !important;
-      height: 25px;
-      width: 25px;
-      font-size: 25px;
-      color: orange;
-      cursor: pointer;
-      text-align: center;
-      opacity:.80;
+      height: 25px !important;
+      width: 25px !important;
+      font-size: 25px !important;
+      color: orange !important;
+      cursor: pointer !important;
+      text-align: center !important;
+      opacity:.80 !important;
     }
 
     .calcApp_mainWrapper #calcApp_addExpenseWrap{
-        overflow:hidden;
-        width: 80%;
-        padding:15px;
-        margin:auto;
-        background-color:rgba(150,150,150,.1);
+        overflow:hidden !important;
+        width: 80% !important;
+        margin:auto !important;
+        background-color:rgba(150,150,150,.1) !important;
     }
 
     .calcApp_mainWrapper #calcApp_addExpenseWrap h3{
-    line-height:36px;
-    margin:0px;
-    font-weight:200;
-    font-size:22px;
-    padding:5px;
-    text-transform: uppercase;
-    margin:0px 50px 15px 50px;
-    border-bottom:3px solid rgba(50,50,50,.1);
-    color:rgba(50,50,50,.6);
+        line-height:36px !important;
+        margin:0px !important;
+        font-weight:200 !important;
+        font-size:22px !important;
+        padding:5px !important;
+        text-transform: uppercase !important;
+        margin:0px 50px 15px 50px !important;
+        border-bottom:3px solid rgba(50,50,50,.1) !important;
+        color:rgba(50,50,50,.6) !important;
     }
 
     .calcApp_mainWrapper #calcApp_summaryWrapper {
-        width:100%;
-        background-color:#222;
-        margin:20px auto;
-        clear:both;
-        padding:15px;       
-        border-bottom-left-radius: 5px;
-        border-bottom-left-radius: 5px;
+        width: 100% !important;
+        background-color: #222 !important;
+        margin: 20px auto !important;
+        border-bottom-left-radius: 5px !important;
+        border-bottom-right-radius: 5px !important;
+        box-sizing: border-box !important;
     }
 
     .calcApp_mainWrapper #calcApp_summaryWrapper h3{
-    border-bottom:3px solid rgba(255,255,255,.1);
-    width:90%;
-    margin:10px auto;
-    color:white;   
-    font-weight:200;
-    text-transform: uppercase; 
+        border-bottom:3px solid rgba(255,255,255,.1) !important;
+        width:90% !important;
+        margin:10px auto !important;
+        color:white !important;   
+        font-weight:200 !important;
+        text-transform: uppercase !important; 
     }
 
     .calcApp_mainWrapper #calcApp_mainApp input{
-    position:relative;
+        position:relative !important;
     }
 
     .calcApp_mainWrapper .calApp_AddExpenseButton {
-        background-color:green;
-        border:none;
-        height:40px;
-        margin:0px 10px;
-        vertical-align: top;
-        line-height:40px;
-        cursor:pointer;
-        color:white;
-        font-weight: 600;
-        font-size:18px;
-        font-weight:28px;
-        display:inline-block;
-        border-radius:5px;
-        padding:0px 20px;
+        background-color:green !important;
+        border:none !important;
+        height:40px !important;
+        margin:0px 10px !important;
+        vertical-align: top !important;
+        line-height:40px !important;
+        cursor:pointer !important;
+        color:white !important;
+        font-weight: 600 !important;
+        font-size:18px !important;
+        font-weight:28px !important;
+        display:inline-block !important;
+        border-radius:5px !important;
+        padding:0px 20px !important;
     }
 
     .calcApp_mainWrapper .calcApp_calcInsertExpenseField {
-        position: relative;
-        border: 1px solid transparent;
-        background-color: transparent;
-        box-shadow: none;
-        margin: 0px;
-        width: 100%;
-        font-size: 14px;
-        height: 100%;
-        font-weight: 200;
-        text-align: center;
-        font-style: italic;
-        height: 46px; 
+        position: relative !important;
+        border: 1px solid transparent !important;
+        background-color: transparent !important;
+        box-shadow: none !important;
+        margin: 0px !important;
+        width: 100% !important;
+        font-size: 14px !important;
+        height: 100% !important;
+        font-weight: 200 !important;
+        text-align: center !important;
+        font-style: italic !important;
+        height: 46px !important; 
         padding: 0px 0px 0px 15px !important;
     }
 
     .calcApp_mainWrapper .calcApp_inputIcon {
-        display: block;
-        opacity: 0.5;
-        height: 48px;
-        width: 25px;
-        color: green;
-        line-height: 48px;
-        position: absolute;
-        top: 0;
-        left: 8px;
-        bottom: 0;
-        z-index: 999;
-        right: 0;
+        display: block !important;
+        opacity: 0.5 !important;
+        height: 48px !important;
+        width: 25px !important;
+        color: green !important;
+        line-height: 48px !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 8px !important;
+        bottom: 0 !important;
+        z-index: 999 !important;
+        right: 0 !important;
     }
 
     .calcApp_mainWrapper .calcApp_calcInsertExpenseField:focus{
-        background-color:rgba(0,255,0,0.1);
-        outline:none;
-        border: 1px solid transparent;
+        background-color:rgba(0,255,0,0.1) !important;
+        outline:none !important;
+        border: 1px solid transparent !important;
     }
 
     .calcApp_mainWrapper .calcApp_calcTitle {
-        margin:20px 0px;
-        font-size: 32px; 
-        line-height: 32px; 
-        text-align: center;
+        margin:20px 0px !important;
+        font-size: 32px !important; 
+        line-height: 32px !important; 
+        text-align: center !important;
+        padding: 0px !important;
     }
 
-    .calcApp_mainWrapper .calcApp_addNewExpenseField{
-        text-align:center;
+    .calcApp_mainWrapper .calcApp_addNewExpenseField {
+        text-align:center !important;
         width:50% !important;
-        border-radius:5px;
+        border-radius:5px !important;
         border: 3px solid green !important;
         padding: 0px 5px !important;
-        font-size:18px;
-        line-height:40px;
-        height:40px;
+        font-size:18px !important;
+        line-height:40px !important;
+        height:40px !important;
     }
 
     .calcApp_mainWrapper #calcAppIntroContainer {
-        text-align:center;
-        min-height:55px;
+        text-align:center !important;
+        min-height:55px !important;
     }
 
     .calcApp_mainWrapper .calcApp_typeDescription {
-        display: inline-block;
-        width: 40%;
-        text-align: center;
-        margin: 1%;
-        min-height: 60px;
+        display: inline-block !important;
+        width: 40% !important;
+        text-align: center !important;
+        margin: 1% !important;
+        min-height: 60px !important;
     }
 
     .calcApp_mainWrapper .calcApp_typeDescriptionText span{
-        margin:5px;
-        padding:0;
-        font-size: 12px; 
-        line-height: 14px; 
-        color:#444;
+        margin:5px !important;
+        padding:0 !important;
+        font-size: 12px !important; 
+        line-height: 14px !important; 
+        color:#444 !important;
     }
 
     .calcApp_mainWrapper .calcApp_typeArrow {
-        color:#444;
-        display:inline-block;
-        font-size: 20px;
-        margin-top: -10px;
-        -webkit-transform: rotate(-90deg);
-        -moz-transform: rotate(-90deg);
-        -ms-transform: rotate(-90deg);
-        -o-transform: rotate(-90deg);
-        filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+        color:#444 !important;
+        display:inline-block !important;
+        font-size: 20px !important;
+        margin-top: -10px !important;
+        -webkit-transform: rotate(-90deg) !important;
+        -moz-transform: rotate(-90deg) !important;
+        -ms-transform: rotate(-90deg) !important;
+        -o-transform: rotate(-90deg) !important;
+        filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3) !important;
     }
 
     .calcApp_mainWrapper .calcApp_descriptionContainer {
-        text-align:center;
+        text-align:center !important;
     }
 
     .calcApp_mainWrapper .calcApp_incomeInputField {
         border: 3px solid green !important;
-        border-radius: 5px;
+        border-radius: 5px !important;
         font-size: 24px !important;
-        line-height: 50px;
-        height: 50px;
-        padding: 0px 20px;
+        line-height: 50px !important;
+        height: 50px !important;
+        padding: 0px 20px !important;
         overflow: hidden !important;
         width: 90% !important;
-        margin-bottom: 15px;
-        text-align: center;
+        margin-bottom: 15px !important;
+        text-align: center !important;
         font-weight: 400 !important;
         color: #2a462a !important;
     }
@@ -560,81 +1000,52 @@
 
 
     .calcApp_mainWrapper .calcApp_footerWrap {
-        margin: 30px auto; 
-        padding: 15px;
-        width: 90%;
-        text-align: center;
+        margin: 30px auto !important; 
+        padding: 15px !important;
+        width: 90% !important;
+        text-align: center !important;
     }
 
     .calcApp_mainWrapper .calcApp_fadeInTransition{
-        overflow: hidden;
-        -webkit-transition: 1s;
-        transition: 1s;
+        overflow: hidden !important;
+        -webkit-transition: 1s !important;
+        transition: 1s !important;
     }
 
     .calcApp_mainWrapper .calcApp_introTitle{
-    text-align: center;
+    text-align: center !important;
     }
 
-.calcApp_mainWrapper #calcApp_embedArea{
-    padding: 15px;
-    border-radius: 4px;
-    max-width:600px;
-    width:80%;
-    margin:30px auto;
-    box-sizing:border-box;
-}    
-
-.calcApp_mainWrapper #calcApp_embedArea p{
-    font-size: 14px; 
-    line-height: 16px; 
-    text-align:center; 
+.calcApp_mainWrapper .calcApp_hideShowSummary--hide{
+max-height:0px !important;
+padding:0px !important;
 }
 
-.calcApp_mainWrapper #calcApp_embedArea h3{
-    text-align:center;
-     font-size: 26px;
-     font-weight: 200;
-     margin: 0;
-     padding: 0;
+.calcApp_mainWrapper .calcApp_hideShowSummary--show{
+max-height: 1500px !important;
+padding: 15px !important;
 }
 
-.calcApp_mainWrapper #calcApp_codeContainer{
-    margin:auto;
-    font-size: 10px;
-    line-height: 10px; 
-    font-weight:200;
-    border: 2px solid #999;
-    display: block;
-    padding: 10px;
-    word-wrap: break-word;
-    height: 100px; 
-    overflow-y: scroll;
-    background-color: #333;
-    color: rgba( 250, 250, 250, 0.5);
+.calcApp_mainWrapper .calcApp_hideShowClass--show{
+max-height:400px !important;
 }
 
-.calcApp_mainWrapper .calcApp_calcCodeWrap{
-    max-width:400px;
-    padding:15px;
-    margin:auto;
+.calcApp_mainWrapper .calcApp_hideShowClass--hide{
+max-height: 0px !important; 
+overflow: hidden !important; 
+min-height: 0px !important;
+padding: 0px !important; 
 }
 
-.calcApp_mainWrapper .calcApp_embbedButton{
-    margin:auto;
-    background-color: orange;
-    display: block;
-    width: 100%;
-    max-width: 250px; 
+.calcApp_mainWrapper .calcApp_hideShowWithHoldings--show{
+max-height: 1500px !important; 
 }
 
-.calcApp_mainWrapper .calcApp_embbedButton::-moz-selection{
-    display:none;
+.calcApp_mainWrapper .calcApp_hideShowWithHoldings--hide{
+max-height: 0px !important; 
 }
 
-.calcApp_mainWrapper .calcApp_embbedButton::selection{
-    display:none;
-}
+
 
 
 

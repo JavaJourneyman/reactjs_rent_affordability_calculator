@@ -71,7 +71,7 @@ $('.calcApp_selectorButton').on('click', function(){
     $('.calcApp_selectorButton').removeClass('_calcApp_selectorButton--active');
     $(this).addClass('_calcApp_selectorButton--active');
     $('#calcApp_mainApp').addClass('calcApp_effect6');
-    $('#calcApp_mainApp').css('background','white');
+    $('#calcApp_mainApp').addClass('calcApp_mainApp--white');
 });
 
 /** @jsx React.DOM */
@@ -125,14 +125,10 @@ var CalcTable = React.createClass({displayName: "CalcTable",
 
    income = this.props.income;
 
-    var withHoldingsStyle = {
-      maxHeight:'0px'
-    };
+    var withHoldingsStyle = 'calcApp_hideShowWithHoldings--hide '
 
     if (income > 0){
-      withHoldingsStyle = {
-        maxHeight:'1500px'
-      };
+      withHoldingsStyle = 'calcApp_hideShowWithHoldings--show '
     } 
 
     var ExpRows = [];
@@ -150,19 +146,19 @@ var CalcTable = React.createClass({displayName: "CalcTable",
     });
     return(
     React.createElement("div", {className: "calcApp_sectionContainer"}, 
-    React.createElement("div", {style: this.props.showCalcApp, className: "calcApp_fadeInTransition"}, 
+    React.createElement("div", {className: 'calcApp_fadeInTransition '+this.props.showCalcApp}, 
 
     React.createElement("h3", {className: "calcApp_sectionTitle"}, "Taxes and Other Monthly Paycheck Withholdings"), 
-      React.createElement("p", {style: this.props.showCalcApp, className: "calcApp_instructions calcApp_fadeInTransition"}, React.createElement("span", {className: "calcApp_instructionsLabel"}, "Instructions: "), " Adjust the percentages below to estimate your paycheck withholdings"), 
+      React.createElement("p", {className: 'calcApp_instructions calcApp_fadeInTransition'+this.props.showCalcApp}, React.createElement("span", {className: "calcApp_instructionsLabel"}, "Instructions: "), " Adjust the percentages below to estimate your paycheck withholdings"), 
       React.createElement("table", null, 
         React.createElement("tbody", null, 
           WithHoldRows
           )
       )
       ), 
-      React.createElement("div", {className: "calcApp_sectionContainer calcApp_fadeInTransition", style: withHoldingsStyle}, 
+      React.createElement("div", {className: withHoldingsStyle+"calcApp_sectionContainer calcApp_fadeInTransition"}, 
       React.createElement("h3", {className: "calcApp_sectionTitle"}, "Monthly Expenses"), 
-      React.createElement("p", {style: this.props.showCalcApp, className: "calcApp_instructions calcApp_fadeInTransition"}, React.createElement("span", {className: "calcApp_instructionsLabel"}, "Instructions: "), "Enter your monthly expenses below.  Remove an expense by clicking its orange button, or add a new expense with the form"), 
+      React.createElement("p", {className: 'calcApp_instructions calcApp_fadeInTransition'+this.props.showCalcApp}, React.createElement("span", {className: "calcApp_instructionsLabel"}, "Instructions: "), "Enter your monthly expenses below.  Remove an expense by clicking its orange button, or add a new expense with the form"), 
       React.createElement("table", null, 
         React.createElement("tbody", null, 
           ExpRows
@@ -269,11 +265,9 @@ currentSum = currentSum - lessWithHoldings;
 currentSum =  numeral(currentSum).format('$0,0');
 
   return(
-    React.createElement("div", {id: "calcApp_summaryWrapper", className: "calcApp_fadeInTransition", style: this.props.showCalcApp}, 
-        React.createElement("div", {className: "table-summary"}, 
+    React.createElement("div", {id: "calcApp_summaryWrapper", className: 'calcApp_fadeInTransition '+this.props.showCalcApp}, 
          React.createElement("h3", null, "How Much Money Will You Have Left Over?"), 
         React.createElement("p", {id: "calcApp_sumedFunds"}, currentSum)
-        )
     )
     );
   }
@@ -308,7 +302,7 @@ var CalcApp = React.createClass({displayName: "CalcApp",
                 cat1: catOne,
                 cat2: catTwo,
                 income: '',
-                showCalcApp : {maxHeight:'0px', padding: '0px' }
+                showCalcApp : 'calcApp_hideShowSummary--hide '
             }
          },
         onStatusChange: function(mod, iVal) {
@@ -345,11 +339,11 @@ var CalcApp = React.createClass({displayName: "CalcApp",
         onIncomeInputChange: function(inc){
           if(inc > 0){
           this.setState({
-            showCalcApp : { maxHeight:'1000px' }
+            showCalcApp : 'calcApp_hideShowSummary--show '
           });
           } else {
             this.setState({
-            showCalcApp : {maxHeight:'0px', padding: '0px' }
+            showCalcApp : 'calcApp_hideShowSummary--hide '
           });
           }
           this.setState({
@@ -381,7 +375,7 @@ var CalcApp = React.createClass({displayName: "CalcApp",
           React.createElement("h3", {className: "calcApp_calcTitle"}, "Detailed Rent Calculator"), 
           React.createElement(InputIncome, null), 
           React.createElement(CalcTable, {cat1: this.state.cat1, cat2: this.state.cat2, income: this.state.income, showCalcApp: this.state.showCalcApp}), 
-         React.createElement("div", {id: "calcApp_addExpenseWrap", className: "calcApp_effect6", style: this.state.showCalcApp}, 
+         React.createElement("div", {id: "calcApp_addExpenseWrap", className: 'calcApp_effect6 '+this.state.showCalcApp}, 
          React.createElement("h3", null, "Add Another Expense:"), 
             React.createElement(AddRowButton, {cat1: this.state.cat1, ref: "addNewItem", onSubmit: this.handleSubmit, showCalcApp: this.state.showCalcApp})
           ), 
@@ -407,10 +401,10 @@ handleSimpleCalcChange: function(event){
   });
 },
 render: function(){
-    var showSection = {maxHeight: '0px', overflow: 'hidden', minHeight: '0px', padding: '0px'}; 
+    var showSection = 'calcApp_hideShowClass--hide ' 
 
  if( this.state.simpleCalcVal > 0 ){
-    showSection = {maxHeight: '400px'}    
+    showSection = 'calcApp_hideShowClass--show '    
   }
 
   unformatedSimpEst = numeral(this.state.simpleEstimate).format('0');
@@ -419,7 +413,7 @@ render: function(){
     React.createElement("div", {className: "calcApp_simpleCalcApp"}, 
     React.createElement("h3", {className: "calcApp_calcTitle"}, "Simple Rent Calculator"), 
     React.createElement("input", {className: "calcApp_incomeInputField", value: this.state.simpleCalcVal, placeholder: 'Enter Your Annual Income', onChange: this.handleSimpleCalcChange}), 
-    React.createElement("div", {className: "simpleCalc_moneyleft calcApp_fadeInTransition", style: showSection}, React.createElement("h3", null, "Your Maximum Recommended Rent is:"), React.createElement("p", {className: "simpleCalc_output"}, this.state.simpleEstimate), 
+    React.createElement("div", {className: showSection+'simpleCalc_moneyleft calcApp_fadeInTransition'}, React.createElement("h3", null, "Your Maximum Recommended Rent is:"), React.createElement("p", {className: "simpleCalc_output"}, this.state.simpleEstimate), 
         React.createElement("p", {className: "calcApp_summaryText"}, "Your maximum suggested rent is ", this.state.simpleEstimate, " and you will have $", numeral(this.state.simpleCalcVal/12-unformatedSimpEst).format('0,0'), " left over before taxes and other deductions")
     )
   )
